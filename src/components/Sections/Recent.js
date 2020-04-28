@@ -15,11 +15,7 @@ const Recent = () => (
         conducting various <a href="https://github.com/laneysmith/">experiments</a>,
       </ListItem>
       <ListItem icon="📓">
-        writing{' '}
-        <a href="https://dev.to/laney/mapbox-how-to-conditionally-style-features-based-on-covid-19-data-h78">
-          more
-        </a>{' '}
-        <a href="https://dev.to/laney/react-mapbox-beginner-tutorial-2e35">articles</a>,
+        writing a few <a href="https://dev.to/laney">articles</a> about coding,
       </ListItem>
       <ListItem icon="✨">and building modern websites that make people's lives easier.</ListItem>
     </List>

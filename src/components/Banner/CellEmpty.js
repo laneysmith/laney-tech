@@ -21,7 +21,6 @@ const CellEmpty = () => {
 
   return (
     <GridCellEmpty
-      role="button"
       colorIndex={index}
       className={`commit commit--interactive commit--${statuses[index]}`}
       onClick={handleClickCell}
