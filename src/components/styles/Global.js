@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     align-items: center;
     background: ${({ theme }) => theme.backgroundColor};
+    background-attachment: fixed;
     color: ${({ theme }) => theme.textColor};
     font-size: 14px;
     line-height: 1.4rem;
