@@ -4,7 +4,7 @@ import CellEmpty from './CellEmpty';
 import CellFilled from './CellFilled';
 import EmptyColumn from './EmptyColumn';
 
-const BannerFancy = () => (
+const BannerDesktop = () => (
   <>
     <EmptyColumn />
 
@@ -275,7 +275,9 @@ const BannerFancy = () => (
     <CellEmpty />
     <CellEmpty />
     {/* END Y */}
+
+    <EmptyColumn />
   </>
 );
 
-export default BannerFancy;
+export default BannerDesktop;
