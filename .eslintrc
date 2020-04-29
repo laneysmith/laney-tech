@@ -10,12 +10,13 @@
     "jsx-a11y",
     "prettier"
   ],
-  "ignorePatterns": ["node_modules/", "src/serviceWorker.js"],
+  "ignorePatterns": ["node_modules/", "src/serviceWorker.js", "src/setupTests.js"],
   "rules": {
     "semi": [2, "always"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import/prefer-default-export": 0,
     "react/no-array-index-key": 0,
-    "react/no-unescaped-entities": 0
+    "react/no-unescaped-entities": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }

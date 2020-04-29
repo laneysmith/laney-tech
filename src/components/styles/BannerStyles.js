@@ -28,11 +28,13 @@ const BannerGrid = styled.div`
   grid-column-gap: 3px;
   grid-row-gap: 3px;
   grid-auto-flow: column;
+  /* width: 100%; */
 `;
 
 const GridCell = styled.div`
   height: 12px;
   width: 12px;
+  outline: none;
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.textColor};
@@ -40,22 +42,20 @@ const GridCell = styled.div`
 `;
 
 const GridCellEmpty = styled(GridCell)`
-  background: ${({ theme, colorIndex }) => {
-    if (colorIndex === 0) {
+  background: ${({ theme, colorNumber }) => {
+    if (colorNumber === 0) {
       return theme.cellColor;
     }
-    return theme[`accentColor${colorIndex}`];
+    return theme[`accentColor${colorNumber}`];
   }};
+  cursor: pointer;
 `;
 
 const GridCellFilled = styled(GridCell)`
   background: ${({ theme, randomNumber }) => theme[`accentColor${randomNumber}`]};
-  cursor: pointer;
-  outline: none;
 
   &:focus {
     border: 1px solid ${({ theme }) => theme.textColor};
-    outline: none;
   }
 `;
 

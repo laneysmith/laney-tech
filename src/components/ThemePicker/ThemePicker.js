@@ -9,6 +9,7 @@ const ThemePicker = ({ themeList, theme, setTheme }) => (
       const isSelected = theme === color;
       return (
         <ThemeButton
+          id={`${color}-theme-btn`}
           key={`${color}-theme`}
           type="button"
           onClick={() => setTheme(color)}
