@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recent should match snapshot 1`] = `
+.c0 {
+  margin: 2em auto;
+  padding: 0 1em;
+  max-width: 550px;
+}
+
+.c1 {
+  padding: 1em;
+  margin-left: 1em;
+  border-left: 1px solid;
+}
+
+.c2 {
+  margin: 0.5em 0 0.5em 0.5em;
+}
+
+.c3 {
+  display: inline-block;
+  width: 20px;
+  margin-right: 0.5em;
+}
+
+@media only screen and (max-width:600px) {
+  .c0 {
+    padding: 0 0.5em;
+  }
+}
+
+<section
+  class="c0"
+>
+  <h2>
+    Recent Activity
+  </h2>
+  <div
+    class="c1"
+  >
+    Lately I've been...
+    <div
+      class="c2"
+      role="list"
+    >
+      <div
+        role="listitem"
+      >
+        <span
+          class="c3"
+          role="img"
+        >
+          🗺
+        </span>
+        making 
+        <a
+          href="https://covid.laney.tech/"
+        >
+          data-driven maps
+        </a>
+        ,
+      </div>
+      <div
+        role="listitem"
+      >
+        <span
+          class="c3"
+          role="img"
+        >
+          🧪
+        </span>
+        conducting various 
+        <a
+          href="https://github.com/laneysmith/"
+        >
+          experiments
+        </a>
+        ,
+      </div>
+      <div
+        role="listitem"
+      >
+        <span
+          class="c3"
+          role="img"
+        >
+          📓
+        </span>
+        writing a few 
+        <a
+          href="https://dev.to/laney"
+        >
+          articles
+        </a>
+         about coding,
+      </div>
+      <div
+        role="listitem"
+      >
+        <span
+          class="c3"
+          role="img"
+        >
+          ✨
+        </span>
+        and building modern websites that make people's lives easier.
+      </div>
+    </div>
+  </div>
+</section>
+`;

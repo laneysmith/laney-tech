@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import { GridCellEmpty } from '../styles/BannerStyles';
 
 const CellEmpty = () => {
-  const [index, setIndex] = useState(0);
-  const statuses = [0, 1, 2, 3, 4, 5];
+  const [colorNumber, setColorNumber] = useState(0);
   const handleClickCell = () => {
-    setIndex((prevState) => {
+    setColorNumber((prevState) => {
       if (prevState === 5) {
         return 0;
       }
@@ -21,8 +20,7 @@ const CellEmpty = () => {
 
   return (
     <GridCellEmpty
-      colorIndex={index}
-      className={`commit commit--interactive commit--${statuses[index]}`}
+      colorNumber={colorNumber}
       onClick={handleClickCell}
       onMouseOver={handleClickCell}
       onKeyDown={handleKeyDown}

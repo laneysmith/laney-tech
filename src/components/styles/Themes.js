@@ -38,7 +38,7 @@ export const rainbow = {
   linkColor: '#6765de',
   gridBackgroundColor: '#FFFFFF',
   cellColor: 'rgb(235, 237, 240)',
-  borderColor: '#6765de',
+  borderColor: '#9796d2',
   accentColor1: 'rgba(255, 108, 108, 1)', // red
   accentColor2: 'rgba(255, 162, 42, 1)', // orange
   accentColor3: 'rgba(123, 201, 111, 1)', // green
