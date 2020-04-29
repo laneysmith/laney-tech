@@ -15,12 +15,11 @@ exports[`About should match snapshot 1`] = `
 
 .c2 {
   margin: 0.5em 0 0.5em 0.5em;
-}
-
-.c3 {
-  display: inline-block;
-  width: 20px;
-  margin-right: 0.5em;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-column-gap: 6px;
+  grid-row-gap: 3px;
+  grid-auto-flow: row;
 }
 
 @media only screen and (max-width:600px) {
@@ -43,25 +42,23 @@ exports[`About should match snapshot 1`] = `
       role="list"
     >
       <div
-        role="listitem"
+        role="img"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          👩‍💻
-        </span>
-        web developer
+        👩‍💻
       </div>
       <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          🏔
-        </span>
+        web developer
+      </div>
+      <div
+        role="img"
+      >
+        🏔
+      </div>
+      <div
+        role="listitem"
+      >
         Bellingham, WA
       </div>
     </div>

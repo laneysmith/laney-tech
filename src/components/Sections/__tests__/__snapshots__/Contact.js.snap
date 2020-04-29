@@ -15,12 +15,11 @@ exports[`Contact should match snapshot 1`] = `
 
 .c2 {
   margin: 0.5em 0 0.5em 0.5em;
-}
-
-.c3 {
-  display: inline-block;
-  width: 20px;
-  margin-right: 0.5em;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-column-gap: 6px;
+  grid-row-gap: 3px;
+  grid-auto-flow: row;
 }
 
 @media only screen and (max-width:600px) {
@@ -43,48 +42,45 @@ exports[`Contact should match snapshot 1`] = `
       role="list"
     >
       <div
+        role="img"
+      >
+        💻
+      </div>
+      <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          💻
-        </span>
         <a
           href="https://github.com/laneysmith"
         >
-          github
+          github.com/laneysmith
         </a>
+      </div>
+      <div
+        role="img"
+      >
+        👔
       </div>
       <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          👔
-        </span>
         <a
           href="https://linkedin.com/in/laneysmith"
         >
-          linkedin
+          linkedin.com/in/laneysmith
         </a>
+      </div>
+      <div
+        role="img"
+      >
+        📨
       </div>
       <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          📨
-        </span>
         <a
-          href="mailto:lsmith.unc@gmail.com"
+          href="mailto:hello@laney.tech"
         >
-          email
+          hello@laney.tech
         </a>
       </div>
     </div>

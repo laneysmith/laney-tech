@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { List as StyledList } from '../styles/ListStyles';
+import { ListContainer } from '../styles/ListStyles';
 
-const List = ({ children }) => <StyledList role="list">{children}</StyledList>;
+const List = ({ children }) => <ListContainer role="list">{children}</ListContainer>;
 
 List.propTypes = {
   children: PropTypes.node.isRequired,

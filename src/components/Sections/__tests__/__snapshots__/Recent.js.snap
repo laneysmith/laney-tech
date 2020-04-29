@@ -15,12 +15,11 @@ exports[`Recent should match snapshot 1`] = `
 
 .c2 {
   margin: 0.5em 0 0.5em 0.5em;
-}
-
-.c3 {
-  display: inline-block;
-  width: 20px;
-  margin-right: 0.5em;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-column-gap: 6px;
+  grid-row-gap: 3px;
+  grid-auto-flow: row;
 }
 
 @media only screen and (max-width:600px) {
@@ -44,14 +43,13 @@ exports[`Recent should match snapshot 1`] = `
       role="list"
     >
       <div
+        role="img"
+      >
+        🗺
+      </div>
+      <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          🗺
-        </span>
         making 
         <a
           href="https://covid.laney.tech/"
@@ -61,14 +59,13 @@ exports[`Recent should match snapshot 1`] = `
         ,
       </div>
       <div
+        role="img"
+      >
+        🧪
+      </div>
+      <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          🧪
-        </span>
         conducting various 
         <a
           href="https://github.com/laneysmith/"
@@ -78,14 +75,13 @@ exports[`Recent should match snapshot 1`] = `
         ,
       </div>
       <div
+        role="img"
+      >
+        📓
+      </div>
+      <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          📓
-        </span>
         writing a few 
         <a
           href="https://dev.to/laney"
@@ -95,14 +91,13 @@ exports[`Recent should match snapshot 1`] = `
          about coding,
       </div>
       <div
+        role="img"
+      >
+        ✨
+      </div>
+      <div
         role="listitem"
       >
-        <span
-          class="c3"
-          role="img"
-        >
-          ✨
-        </span>
         and building modern websites that make people's lives easier.
       </div>
     </div>

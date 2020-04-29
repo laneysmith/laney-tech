@@ -8,13 +8,13 @@ const Contact = () => (
   <SectionTemplate title="Contact Me">
     <List>
       <ListItem icon="💻">
-        <a href="https://github.com/laneysmith">github</a>
+        <a href="https://github.com/laneysmith">github.com/laneysmith</a>
       </ListItem>
       <ListItem icon="👔">
-        <a href="https://linkedin.com/in/laneysmith">linkedin</a>
+        <a href="https://linkedin.com/in/laneysmith">linkedin.com/in/laneysmith</a>
       </ListItem>
       <ListItem icon="📨">
-        <a href="mailto:lsmith.unc@gmail.com">email</a>
+        <a href="mailto:hello@laney.tech">hello@laney.tech</a>
       </ListItem>
     </List>
   </SectionTemplate>

@@ -28,7 +28,6 @@ const BannerGrid = styled.div`
   grid-column-gap: 3px;
   grid-row-gap: 3px;
   grid-auto-flow: column;
-  /* width: 100%; */
 `;
 
 const GridCell = styled.div`
