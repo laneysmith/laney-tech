@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 1.2em;
   }
 
   a {
@@ -40,6 +40,7 @@ const GlobalStyles = createGlobalStyle`
 
    @media only screen and (max-width: 600px) {
     body {
+      font-size:  16px;
       margin: 0.5em 0;
     }
   }
