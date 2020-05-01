@@ -78,9 +78,9 @@ exports[`Contact should match snapshot 1`] = `
         role="listitem"
       >
         <a
-          href="mailto:hello@laney.tech"
+          href="mailto:lsmith.unc@gmail.com"
         >
-          hello@laney.tech
+          email
         </a>
       </div>
     </div>

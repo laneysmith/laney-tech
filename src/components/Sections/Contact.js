@@ -14,7 +14,7 @@ const Contact = () => (
         <a href="https://linkedin.com/in/laneysmith">linkedin.com/in/laneysmith</a>
       </ListItem>
       <ListItem icon="📨">
-        <a href="mailto:hello@laney.tech">hello@laney.tech</a>
+        <a href="mailto:lsmith.unc@gmail.com">email</a>
       </ListItem>
     </List>
   </SectionTemplate>
