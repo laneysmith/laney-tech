@@ -4,8 +4,9 @@ import * as ThemeStyles from './styles/Themes';
 import GlobalStyles from './styles/Global';
 
 import { Banner } from './Banner';
-import { About, Recent, Contact } from './Sections';
+import { Sections } from './Sections';
 import { ThemePicker } from './ThemePicker';
+import { Footer } from './Footer';
 import { LIGHT_THEME, THEME_LIST } from './constants';
 
 const App = () => {
@@ -16,9 +17,8 @@ const App = () => {
       <GlobalStyles />
       <ThemePicker theme={theme} setTheme={setTheme} themeList={THEME_LIST} />
       <Banner />
-      <About />
-      <Recent />
-      <Contact />
+      <Sections />
+      <Footer />
     </ThemeProvider>
   );
 };

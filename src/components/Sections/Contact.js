@@ -7,7 +7,7 @@ import ListItem from './ListItem';
 const Contact = () => (
   <SectionTemplate title="Contact Me">
     <List>
-      <ListItem icon="💻">
+      <ListItem icon="💾">
         <a href="https://github.com/laneysmith">github.com/laneysmith</a>
       </ListItem>
       <ListItem icon="👔">

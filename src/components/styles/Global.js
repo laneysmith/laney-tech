@@ -8,19 +8,30 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 1em;
     background: ${({ theme }) => theme.backgroundColor};
     background-attachment: fixed;
     color: ${({ theme }) => theme.textColor};
     font-size: 14px;
-    line-height: 1.4rem;
-    margin: 1em;
+    line-height: 1.5em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all 0.25s linear;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
   }
 
   h2 {
@@ -41,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
    @media only screen and (max-width: 600px) {
     body {
       font-size:  16px;
-      margin: 0.5em 0;
+      padding: 0.5em 0;
     }
   }
 `;

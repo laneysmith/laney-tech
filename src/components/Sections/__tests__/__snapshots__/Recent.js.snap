@@ -4,7 +4,6 @@ exports[`Recent should match snapshot 1`] = `
 .c0 {
   margin: 2em auto;
   padding: 0 1em;
-  max-width: 550px;
 }
 
 .c1 {
@@ -17,9 +16,13 @@ exports[`Recent should match snapshot 1`] = `
   margin: 0.5em 0 0.5em 0.5em;
   display: grid;
   grid-template-columns: 20px 1fr;
-  grid-column-gap: 6px;
-  grid-row-gap: 3px;
+  grid-column-gap: 8px;
+  grid-row-gap: 4px;
   grid-auto-flow: row;
+}
+
+.c2 > [role='img'] {
+  font-size: 1.2em;
 }
 
 @media only screen and (max-width:600px) {
@@ -34,7 +37,7 @@ exports[`Recent should match snapshot 1`] = `
   <h2>
     Recent Activity
   </h2>
-  <div
+  <main
     class="c1"
   >
     Lately I've been...
@@ -101,6 +104,6 @@ exports[`Recent should match snapshot 1`] = `
         and building modern websites that make people's lives easier.
       </div>
     </div>
-  </div>
+  </main>
 </section>
 `;
