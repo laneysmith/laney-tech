@@ -1,19 +1,10 @@
 {
-  "extends": [
-    "react-app",
-    "airbnb",
-    "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react"
-  ],
-  "plugins": [
-    "jsx-a11y",
-    "prettier"
-  ],
-  "ignorePatterns": ["node_modules/", "src/serviceWorker.js", "src/setupTests.js"],
+  "extends": ["react-app", "airbnb", "plugin:jsx-a11y/recommended", "prettier", "prettier/react"],
+  "plugins": ["jsx-a11y", "prettier"],
+  "ignorePatterns": [],
   "rules": {
     "semi": [2, "always"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "import/prefer-default-export": 0,
     "react/no-array-index-key": 0,
     "react/no-unescaped-entities": 0,
