@@ -31,7 +31,7 @@ const Contact = () => {
           <a href={`https://linkedin.com/in/${linkedin}`}>linkedin.com/in/{linkedin}</a>
         </ListItem>
         <ListItem icon="📨">
-          <a href="mailto:lsmith.unc@gmail.com">{email}</a>
+          <a href={`mailto:${email}`}>{email}</a>
         </ListItem>
       </List>
     </Section>

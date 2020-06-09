@@ -9,6 +9,15 @@ import Recent from '../components/recent';
 import Contact from '../components/contact';
 
 type Data = {
+  site: {
+    siteMetadata: {
+      title: string;
+      externalPosts: {
+        title: string;
+        link: string;
+      }[];
+    };
+  };
   allMarkdownRemark: {
     edges: {
       node: {
@@ -16,7 +25,6 @@ type Data = {
         frontmatter: {
           title: string;
           date: string;
-          description: string;
         };
         fields: {
           slug: string;
@@ -28,13 +36,14 @@ type Data = {
 
 const BlogIndex = ({ data }: PageProps<Data>) => {
   const posts = data.allMarkdownRemark.edges;
+  const { externalPosts } = data.site.siteMetadata;
 
   return (
     <Layout>
       <SEO title="Home" />
       <About />
       <Recent />
-      <Articles posts={posts} />
+      <Articles posts={posts} externalPosts={externalPosts} />
       <Contact />
     </Layout>
   );
@@ -47,6 +56,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        externalPosts {
+          title
+          link
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -59,7 +72,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            description
           }
         }
       }

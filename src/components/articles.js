@@ -9,22 +9,44 @@ import ListItem from './section/listItem';
 const icons = ['📘', '📗', '📙', '📕'];
 const getIconByIndex = index => icons[index % icons.length];
 
-const Articles = ({ posts }) => (
-  <Section id="articles-section" title="Articles">
-    <List>
-      {posts.map(({ node }, index) => {
-        const title = node.frontmatter.title || node.fields.slug;
-        return (
-          <ListItem key={node.fields.slug} icon={getIconByIndex(index)}>
-            <Link style={{ display: `block` }} to={node.fields.slug}>
-              {title}
-            </Link>
-          </ListItem>
-        );
-      })}
-    </List>
-  </Section>
-);
+const Articles = ({ posts, externalPosts }) => {
+  const allPosts = [...posts, ...externalPosts];
+
+  if (allPosts.length === 0) {
+    return null;
+  }
+
+  return (
+    <Section id="articles-section" title="Articles">
+      <List>
+        {allPosts.map((post, index) => {
+          if (post.node) {
+            const { node } = post;
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <ListItem key={node.fields.slug} icon={getIconByIndex(index)}>
+                <Link style={{ display: `block` }} to={node.fields.slug}>
+                  {title}
+                </Link>
+              </ListItem>
+            );
+          }
+          if (post.title) {
+            const { title, link } = post;
+            return (
+              <ListItem key={`external-post-${index}`} icon={getIconByIndex(index)}>
+                <a href={link} style={{ display: `block` }}>
+                  {title}
+                </a>
+              </ListItem>
+            );
+          }
+          return null;
+        })}
+      </List>
+    </Section>
+  );
+};
 
 Articles.propTypes = {
   posts: PropTypes.arrayOf(
@@ -41,7 +63,18 @@ Articles.propTypes = {
         }),
       }),
     })
-  ).isRequired,
+  ),
+  externalPosts: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ),
+};
+
+Articles.defaultProps = {
+  posts: [],
+  externalPosts: [],
 };
 
 export default Articles;

@@ -11,6 +11,17 @@ module.exports = {
       linkedin: `laneysmith`,
       email: `lsmith.unc@gmail.com`,
     },
+    externalPosts: [
+      {
+        title: 'Tutorial: Mapbox and React for Beginners (Medium)',
+        link: 'https://dev.to/laney/react-mapbox-beginner-tutorial-2e35',
+      },
+      {
+        title: 'Tutorial: Conditionally Styling Features Based on Data in Mapbox (Medium)',
+        link:
+          'https://dev.to/laney/mapbox-how-to-conditionally-style-features-based-on-covid-19-data-h78',
+      },
+    ],
   },
   plugins: [
     {
@@ -57,7 +68,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: TODO: `ADD TRACKING ID HERE`,
+        // trackingId: TODO: `ADD TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-feed`,

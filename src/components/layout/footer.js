@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { rhythm } from '../../utils/typography';
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -7,8 +8,8 @@ const FooterContainer = styled.footer`
   font-size: 0.8em;
   color: ${({ theme }) => theme.secondaryTextColor};
   border-top: 1px solid ${({ theme }) => theme.borderColor};
-  margin: 2em 0 0 0;
-  padding: 1em 1em 0 1em;
+  margin: ${rhythm(1)} 0 0 0;
+  padding: ${rhythm(0.5)} ${rhythm(0.5)} 0 ${rhythm(0.5)};
   width: 100%;
 `;
 

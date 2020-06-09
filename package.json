@@ -2,7 +2,7 @@
   "name": "laney-tech",
   "private": true,
   "description": "Laney Smith's portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Laney Smith <lsmith.unc@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
