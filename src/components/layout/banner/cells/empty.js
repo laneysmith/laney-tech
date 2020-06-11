@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { GridCellEmpty } from './bannerStyles';
+import { GridCellEmpty } from './cellStyles';
 
 const CellEmpty = () => {
   const [colorNumber, setColorNumber] = useState(0);

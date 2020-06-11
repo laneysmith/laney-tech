@@ -19,8 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.backgroundColor};
     background-attachment: fixed;
     color: ${({ theme }) => theme.textColor};
-    font-size: 14px;
-    line-height: 1.5em;
+    line-height: 1.7em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -41,6 +40,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: ${rhythm(0.5)} 0;
   }
 
+  h2, h3 {
+    border-bottom: none;
+    margin: ${rhythm(0.5)} 0; 
+  }
+
   small {
     color: ${({ theme }) => theme.secondaryTextColor};
   }
@@ -48,7 +52,16 @@ export const GlobalStyle = createGlobalStyle`
   blockquote {
     color: ${({ theme }) => theme.textColor};
     border-left-color: ${({ theme }) => theme.borderColor};
+  }
 
+  strong {
+    font-weight: 800;
+  }
+
+  .svg-icon {
+    fill: currentColor;
+    height: 12px;
+    width: 12px;
   }
   
   a {
@@ -71,12 +84,19 @@ export const GlobalStyle = createGlobalStyle`
 
   /* prismjs overrides */
   :not(pre) > code[class*="language-"] {
-    padding: 2px 6px;
-    border-radius: 4px;
-    white-space: normal;
+    background-color: ${({ theme }) => theme.cellColor};
+    color: ${({ theme }) => theme.textColor};
+    border: 1px solid ${({ theme }) => theme.borderColor};
+    padding: 1px 4px;
+    border-radius: 2px;
   }
 
   code[class*="language-"], pre[class*="language-"] {
+    font-family: 'PT Mono', monospace;
     font-size: 0.95em;
+  }
+
+  code[class*="language-"] {
+    white-space: pre-wrap;
   }
 `;

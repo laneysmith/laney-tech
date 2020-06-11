@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import Section from './section';
 import List from './section/list';
 import ListItem from './section/listItem';
+import ExternalLinkIcon from '../icons/external-link.svg';
 
 const icons = ['📘', '📗', '📙', '📕'];
 const getIconByIndex = index => icons[index % icons.length];
@@ -36,7 +37,7 @@ const Articles = ({ posts, externalPosts }) => {
             return (
               <ListItem key={`external-post-${index}`} icon={getIconByIndex(index)}>
                 <a href={link} style={{ display: `block` }}>
-                  {title}
+                  {title} <ExternalLinkIcon />
                 </a>
               </ListItem>
             );

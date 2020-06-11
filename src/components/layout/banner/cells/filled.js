@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GridCellFilled } from './bannerStyles';
+import { GridCellFilled } from './cellStyles';
 
 const CellFilled = () => {
   const randomNum = Math.floor(Math.random() * 5) + 1;

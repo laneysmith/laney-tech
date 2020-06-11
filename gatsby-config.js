@@ -13,11 +13,11 @@ module.exports = {
     },
     externalPosts: [
       {
-        title: 'Tutorial: Mapbox and React for Beginners (Medium)',
+        title: 'Tutorial: Mapbox and React for Beginners (Dev.to)',
         link: 'https://dev.to/laney/react-mapbox-beginner-tutorial-2e35',
       },
       {
-        title: 'Tutorial: Conditionally Styling Features Based on Data in Mapbox (Medium)',
+        title: 'Tutorial: Conditionally Styling Features Based on Data in Mapbox (Dev.to)',
         link:
           'https://dev.to/laney/mapbox-how-to-conditionally-style-features-based-on-covid-19-data-h78',
       },
@@ -65,12 +65,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // trackingId: TODO: `ADD TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -89,8 +83,19 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /icons/,
+          options: {
+            props: {
+              className: 'svg-icon',
+            },
+          },
+        },
+      },
+    },
+    // TODO: `gatsby-plugin-offline`,
   ],
 };

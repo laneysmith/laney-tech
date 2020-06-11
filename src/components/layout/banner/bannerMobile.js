@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CellEmpty from './cellEmpty';
-import CellFilled from './cellFilled';
+import CellEmpty from './cells/empty';
+import CellFilled from './cells/filled';
 import EmptyColumn from './emptyColumn';
 
 const BannerMobile = () => {

@@ -6,6 +6,7 @@ import BannerDesktop from './bannerDesktop';
 import BannerMobile from './bannerMobile';
 import calculateEmptyColumns from './calculateEmptyColumns';
 import useWindowDimensions from './useWindowWidth';
+import { rhythm } from '../../../utils/typography';
 
 const BannerContainer = styled.div`
   background-color: ${({ theme }) => theme.gridBackgroundColor};
@@ -14,17 +15,16 @@ const BannerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1em 0;
-  padding: 16px;
+  margin: ${rhythm(0.5)} 0 ${rhythm(1)} 0;
+  padding: ${rhythm(0.5)};
 
   @media only screen and (max-width: 600px) {
-    padding: 1em 0;
+    padding: ${rhythm(0.5)} 0;
     border-top: 1px solid ${({ theme }) => theme.borderColor};
     border-bottom: 1px solid ${({ theme }) => theme.borderColor};
     border-left: 0;
     border-right: 0;
     border-radius: 0;
-    margin: 0.5em 0;
   }
 `;
 

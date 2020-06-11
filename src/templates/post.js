@@ -5,12 +5,15 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import Button from '../components/layout/button';
-import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
 const PostTitle = styled.h1`
   margin-top: ${rhythm(1)};
   margin-bottom: 0;
+`;
+
+const ArticleContainer = styled.article`
+  flex: 1;
 `;
 
 const Divider = styled.hr`
@@ -26,7 +29,7 @@ const BottomNav = styled.ul`
   margin: 0;
 `;
 
-const ArticleTemplate = ({ data, pageContext, location }) => {
+const PostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const { frontmatter, excerpt, html } = post;
   const { title, date } = frontmatter;
@@ -39,16 +42,15 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   );
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title={title} description={excerpt} />
-      {homeButton}
-      <article>
+    <Layout pageTitle={title} description={excerpt} location={location} title={siteTitle}>
+      <ArticleContainer>
         <header>
+          {homeButton}
           <PostTitle>{title}</PostTitle>
           <p style={{ ...scale(-1 / 5), display: `block` }}>{date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: html }} />
-      </article>
+      </ArticleContainer>
       <Divider />
       <nav>
         {(previous || next) && (
@@ -80,7 +82,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   );
 };
 
-ArticleTemplate.propTypes = {
+PostTemplate.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
@@ -119,7 +121,7 @@ ArticleTemplate.propTypes = {
   }).isRequired,
 };
 
-export default ArticleTemplate;
+export default PostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

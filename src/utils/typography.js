@@ -6,11 +6,7 @@ GithubTheme.overrideThemeStyles = () => {
     'a.gatsby-resp-image-link': {
       boxShadow: `none`,
     },
-    h2: {
-      borderBottom: `none`,
-    },
     body: {
-      fontColor: 'unset',
       fontSize: '14px',
     },
   };

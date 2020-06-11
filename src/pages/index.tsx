@@ -2,7 +2,6 @@ import React from 'react';
 import { PageProps, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 import About from '../components/about';
 import Articles from '../components/articles';
 import Recent from '../components/recent';
@@ -35,12 +34,11 @@ type Data = {
 };
 
 const BlogIndex = ({ data }: PageProps<Data>) => {
-  const posts = data.allMarkdownRemark.edges;
+  const { edges: posts } = data.allMarkdownRemark;
   const { externalPosts } = data.site.siteMetadata;
 
   return (
-    <Layout>
-      <SEO title="Home" />
+    <Layout pageTitle="Home">
       <About />
       <Recent />
       <Articles posts={posts} externalPosts={externalPosts} />
