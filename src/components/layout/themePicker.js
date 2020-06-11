@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Button from './button';
 
+import { rhythm } from '../../utils/typography';
 import { THEME_LIST } from '../constants';
 
 const ThemePickerContainer = styled.div`
@@ -10,7 +11,7 @@ const ThemePickerContainer = styled.div`
   width: 100%;
 
   @media only screen and (max-width: 600px) {
-    padding-right: 0.5em;
+    padding-right: ${rhythm(0.5)};
   }
 `;
 
@@ -26,6 +27,7 @@ const ThemePicker = ({ theme, setTheme }) => (
           type="button"
           onClick={() => setTheme(color)}
           disabled={isSelected}
+          style={{ marginLeft: `${rhythm(0.5)}` }}
         >
           {color}
         </Button>

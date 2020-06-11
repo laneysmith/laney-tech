@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import Button from '../components/layout/button';
 import { rhythm, scale } from '../utils/typography';
 
 const PostTitle = styled.h1`
@@ -35,17 +34,11 @@ const PostTemplate = ({ data, pageContext, location }) => {
   const { title, date } = frontmatter;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
-  const homeButton = (
-    <Button>
-      <Link to="/">← Home</Link>
-    </Button>
-  );
 
   return (
     <Layout pageTitle={title} description={excerpt} location={location} title={siteTitle}>
       <ArticleContainer>
         <header>
-          {homeButton}
           <PostTitle>{title}</PostTitle>
           <p style={{ ...scale(-1 / 5), display: `block` }}>{date}</p>
         </header>
@@ -76,7 +69,6 @@ const PostTemplate = ({ data, pageContext, location }) => {
             <Divider />
           </>
         )}
-        {homeButton}
       </nav>
     </Layout>
   );

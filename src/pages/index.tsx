@@ -33,12 +33,12 @@ type Data = {
   };
 };
 
-const BlogIndex = ({ data }: PageProps<Data>) => {
+const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const { edges: posts } = data.allMarkdownRemark;
   const { externalPosts } = data.site.siteMetadata;
 
   return (
-    <Layout pageTitle="Home">
+    <Layout location={location} pageTitle="Home">
       <About />
       <Recent />
       <Articles posts={posts} externalPosts={externalPosts} />
