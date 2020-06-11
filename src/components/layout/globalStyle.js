@@ -9,6 +9,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  #___gatsby {
+    width: 100%;
+  }
+
   body {
     display: flex;
     min-height: 100vh;
