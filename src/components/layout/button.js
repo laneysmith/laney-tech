@@ -22,7 +22,6 @@ const Button = styled.button`
 
   &:disabled:hover {
     text-decoration: none;
-    cursor: default;
   }
 
   &:focus {

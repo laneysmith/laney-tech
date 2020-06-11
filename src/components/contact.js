@@ -1,24 +1,12 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
 import Section from './section';
 import List from './section/list';
 import ListItem from './section/listItem';
 
-const Contact = () => {
-  const data = useStaticQuery(graphql`
-    query ContactQuery {
-      site {
-        siteMetadata {
-          social {
-            github
-            linkedin
-            email
-          }
-        }
-      }
-    }
-  `);
+export const PureContact = ({ data }) => {
   const { github, linkedin, email } = data.site.siteMetadata.social;
 
   return (
@@ -37,5 +25,38 @@ const Contact = () => {
     </Section>
   );
 };
+
+PureContact.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        social: PropTypes.shape({
+          github: PropTypes.string.isRequired,
+          linkedin: PropTypes.string.isRequired,
+          email: PropTypes.string.isRequired,
+        }),
+      }),
+    }),
+  }).isRequired,
+};
+
+const Contact = props => (
+  <StaticQuery
+    query={graphql`
+      query ContactQuery {
+        site {
+          siteMetadata {
+            social {
+              github
+              linkedin
+              email
+            }
+          }
+        }
+      }
+    `}
+    render={data => <PureContact {...props} data={data} />}
+  />
+);
 
 export default Contact;

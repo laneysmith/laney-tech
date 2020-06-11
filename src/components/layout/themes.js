@@ -42,9 +42,9 @@ export const rainbow = {
   gridBackgroundColor: '#FFFFFF',
   cellColor: 'rgb(235, 237, 240)',
   borderColor: '#9796d2',
-  accentColor1: 'rgba(255, 108, 108, 1)', // red
+  accentColor1: 'rgba(255, 108, 108, 0.8)', // red
   accentColor2: 'rgba(255, 162, 42, 1)', // orange
   accentColor3: 'rgba(123, 201, 111, 1)', // green
   accentColor4: 'rgba(94, 195, 220, 1)', // blue
-  accentColor5: 'rgba(165, 107, 183, 1)', // purple
+  accentColor5: 'rgba(165, 107, 183, 0.7)', // purple
 };
