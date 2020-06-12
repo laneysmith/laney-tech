@@ -1,6 +1,6 @@
 ---
 title: Tail Recursion Explained with a Simple JavaScript Example
-date: '2020-06-11T16:30:05-07:00'
+date: '2020-06-11T20:16:53-07:00'
 ---
 
 A **recursive function** is one that calls itself until it satisfies a base case, which is a conditional statement used to break the recursion. A function has a **tail call** when its final instruction is to call another function and _do nothing else_. Combining these two concepts, we get **tail recursion**, the algorithmic technique where the calling function's last operation is to make a recursive tail call. The use of tail recursion has important implications for the call stack.

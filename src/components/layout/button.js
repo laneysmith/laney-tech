@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -29,4 +31,22 @@ const Button = styled.button`
   }
 `;
 
-export default Button;
+const StyledButton = ({ id, type, onClick, disabled, ...props }) => {
+  return <Button {...props} id={id} type={type} onClick={onClick} disabled={disabled} />;
+};
+
+StyledButton.propTypes = {
+  id: PropTypes.string,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+};
+
+StyledButton.defaultProps = {
+  id: null,
+  type: 'button',
+  onClick: () => {},
+  disabled: false,
+};
+
+export default StyledButton;

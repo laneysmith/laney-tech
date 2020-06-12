@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
+import SEO from '../components/layout/seo';
 import { rhythm, scale } from '../utils/typography';
 
 const PostTitle = styled.h1`
@@ -28,15 +28,15 @@ const BottomNav = styled.ul`
   margin: 0;
 `;
 
-const PostTemplate = ({ data, pageContext, location }) => {
+const PostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { frontmatter, excerpt, html } = post;
   const { title, date } = frontmatter;
-  const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
   return (
-    <Layout pageTitle={title} description={excerpt} location={location} title={siteTitle}>
+    <>
+      <SEO pageTitle={title} description={excerpt} />
       <ArticleContainer>
         <header>
           <PostTitle>{title}</PostTitle>
@@ -70,7 +70,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
           </>
         )}
       </nav>
-    </Layout>
+    </>
   );
 };
 
