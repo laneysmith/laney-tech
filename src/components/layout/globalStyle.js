@@ -88,7 +88,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* prismjs overrides */
   :not(pre) > code[class*="language-"] {
-    background-color: ${({ theme }) => theme.cellColor};
+    background: ${({ theme }) => theme.cellColor};
     color: ${({ theme }) => theme.textColor};
     border: 1px solid ${({ theme }) => theme.borderColor};
     padding: 1px 4px;
