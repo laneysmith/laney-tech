@@ -88,19 +88,19 @@ export const GlobalStyle = createGlobalStyle`
 
   /* prismjs overrides */
   :not(pre) > code[class*="language-"] {
-    background: ${({ theme }) => theme.cellColor};
-    color: ${({ theme }) => theme.textColor};
-    border: 1px solid ${({ theme }) => theme.borderColor};
-    padding: 1px 4px;
-    border-radius: 2px;
+    background: ${({ theme }) => theme.cellColor} !important;
+    color: ${({ theme }) => theme.textColor} !important;
+    border: 1px solid ${({ theme }) => theme.borderColor} !important;
+    padding: 1px 4px !important;
+    border-radius: 2px !important;
   }
 
   code[class*="language-"], pre[class*="language-"] {
-    font-family: 'PT Mono', monospace;
-    font-size: 0.95em;
+    font-family: 'PT Mono', monospace !important;
+    font-size: 0.95em !important;
   }
 
   code[class*="language-"] {
-    white-space: pre-wrap;
+    white-space: pre-wrap !important;
   }
 `;
