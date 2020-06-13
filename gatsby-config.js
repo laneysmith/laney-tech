@@ -71,6 +71,8 @@ module.exports = {
       options: {
         name: `laney.tech`,
         short_name: `laney.tech`,
+        background_color: `#ffffff`,
+        theme_color: `#196127`,
         start_url: `/`,
         display: `minimal-ui`,
         icon: `content/assets/fav.png`,
@@ -102,6 +104,6 @@ module.exports = {
         component: require.resolve(`./src/components/layout`),
       },
     },
-    // TODO: `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };
