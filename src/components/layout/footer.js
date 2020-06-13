@@ -15,7 +15,7 @@ const FooterContainer = styled.footer`
 
 const Footer = () => (
   <FooterContainer>
-    &#169; {new Date().getFullYear()}, Built by Laney Smith with 💚 and&nbsp;
+    &#169; {new Date().getFullYear()}, Built by Laney Smith with 💜 and&nbsp;
     <a href="https://www.gatsbyjs.org">Gatsby</a>
   </FooterContainer>
 );

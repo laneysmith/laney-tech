@@ -13,7 +13,7 @@ We can illustrate this concept with a common interview whiteboarding question:
 
 > Write a function that accepts a positive integer as an argument and returns the factorial of that number.
 
-One of the simplest solutions involves implementing a non-recursive `for` loop:
+One of the simplest solutions involves a non-recursive `for` loop:
 
 ```javascript
 // for loop solution

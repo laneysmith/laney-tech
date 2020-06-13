@@ -35,14 +35,14 @@ export const rainbow = {
     rgba(123, 201, 111, 0.25) 40px, rgba(123, 201, 111, 0.25) 60px,
     rgba(94, 195, 220, 0.25) 60px, rgba(94, 195, 220, 0.25) 80px,
     rgba(193, 127, 214, 0.25) 80px, rgba(193, 127, 214, 0.25) 100px
-    )`,
+  )`,
   textColor: '#24292e',
   secondaryTextColor: '#24292e',
-  linkColor: '#6765de',
+  linkColor: '#615fd0',
   gridBackgroundColor: '#FFFFFF',
   cellColor: 'rgb(235, 237, 240)',
-  borderColor: '#9796d2',
-  accentColor1: 'rgba(255, 108, 108, 0.8)', // red
+  borderColor: '#b2b7bb',
+  accentColor1: 'rgba(255, 108, 108, 0.7)', // red
   accentColor2: 'rgba(255, 162, 42, 1)', // orange
   accentColor3: 'rgba(123, 201, 111, 1)', // green
   accentColor4: 'rgba(94, 195, 220, 1)', // blue
