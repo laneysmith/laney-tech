@@ -11,7 +11,13 @@ import { rhythm } from '../../../utils/typography';
 const CELL_SIZE = 12;
 const CELL_GAP = 3;
 const ROWS = 7;
+const DESKTOP_BANNER_COLUMNS = 35;
 const BANNER_HEIGHT = CELL_SIZE * 9 + CELL_GAP * (ROWS - 1);
+const BANNER_CONTAINER_BREAKPOINT = 600;
+const BANNER_BREAKPOINT = DESKTOP_BANNER_COLUMNS * (CELL_SIZE + CELL_GAP);
+const DESKTOP_BODY_MARGIN = 13;
+const DESKTOP_BANNER_CONTAINER_PADDING = 13;
+const DESKTOP_SPACING = DESKTOP_BODY_MARGIN * 2 + DESKTOP_BANNER_CONTAINER_PADDING * 2;
 
 const BannerContainer = styled.div`
   background-color: ${({ theme }) => theme.gridBackgroundColor};
@@ -21,11 +27,11 @@ const BannerContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin: ${rhythm(0.5)} 0 ${rhythm(1)} 0;
-  padding: ${`${CELL_SIZE}px`};
-  height: ${`${BANNER_HEIGHT}px`};
+  padding: ${CELL_SIZE}px;
+  height: ${BANNER_HEIGHT}px;
 
-  @media only screen and (max-width: 600px) {
-    padding: ${`${CELL_SIZE}px`} 0;
+  @media only screen and (max-width: ${BANNER_CONTAINER_BREAKPOINT}px) {
+    padding: ${CELL_SIZE}px 0;
     border-top: 1px solid ${({ theme }) => theme.borderColor};
     border-bottom: 1px solid ${({ theme }) => theme.borderColor};
     border-left: 0;
@@ -36,20 +42,14 @@ const BannerContainer = styled.div`
 
 const BannerGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, ${`${CELL_SIZE}px`});
-  grid-template-rows: repeat(${ROWS}, ${`${CELL_SIZE}px`});
-  grid-column-gap: ${`${CELL_GAP}px`};
-  grid-row-gap: ${`${CELL_GAP}px`};
+  grid-template-columns: repeat(auto-fit, ${CELL_SIZE}px);
+  grid-template-rows: repeat(${ROWS}, ${CELL_SIZE}px);
+  grid-column-gap: ${CELL_GAP}px;
+  grid-row-gap: ${CELL_GAP}px;
   grid-auto-flow: column;
   opacity: ${({ isHidden }) => (isHidden ? 0 : 1)};
   transition: opacity 0.25s linear;
 `;
-
-const BANNER_CONTAINER_BREAKPOINT = 600;
-const BANNER_BREAKPOINT = 532;
-const DESKTOP_BODY_MARGIN = 13;
-const DESKTOP_BANNER_CONTAINER_PADDING = 13;
-const DESKTOP_SPACING = DESKTOP_BODY_MARGIN * 2 + DESKTOP_BANNER_CONTAINER_PADDING * 2;
 
 const Banner = () => {
   const desktopBannerRef = useRef(<BannerDesktop />);
