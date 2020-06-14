@@ -2,12 +2,10 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 import { rhythm } from '../../../utils/typography';
-import useIsMounted from '../useIsMounted';
+import { calculateEmptyColumns, useIsMounted, useWindowWidth } from '../utils';
 import EmptyColumn from './emptyColumn';
 import BannerDesktop from './bannerDesktop';
 import BannerMobile from './bannerMobile';
-import calculateEmptyColumns from './calculateEmptyColumns';
-import useWindowWidth from './useWindowWidth';
 
 const CELL_SIZE = 12;
 const CELL_GAP = 3;

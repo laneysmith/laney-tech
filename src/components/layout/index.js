@@ -10,7 +10,7 @@ import ThemePicker from './themePicker';
 import Banner from './banner';
 import Footer from './footer';
 import Button from './button';
-import useIsMounted from './useIsMounted';
+import { useIsMounted } from './utils';
 
 const LayoutContainer = styled.div`
   margin: 0;
