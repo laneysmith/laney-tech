@@ -1,12 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
+import { rhythm } from '../../../utils/typography';
+import useIsMounted from '../useIsMounted';
 import EmptyColumn from './emptyColumn';
 import BannerDesktop from './bannerDesktop';
 import BannerMobile from './bannerMobile';
 import calculateEmptyColumns from './calculateEmptyColumns';
 import useWindowWidth from './useWindowWidth';
-import { rhythm } from '../../../utils/typography';
 
 const CELL_SIZE = 12;
 const CELL_GAP = 3;
@@ -54,14 +55,9 @@ const BannerGrid = styled.div`
 const Banner = () => {
   const desktopBannerRef = useRef(<BannerDesktop />);
   const mobileBannerRef = useRef(<BannerMobile />);
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isMounted = useIsMounted();
   const { width } = useWindowWidth();
-
   let banner = null;
-  let emptyColCount = 0;
   let trailingEmptyColumns = null;
 
   if (isMounted) {
@@ -69,7 +65,7 @@ const Banner = () => {
       width <= BANNER_CONTAINER_BREAKPOINT ? width : width - DESKTOP_SPACING;
     const useDesktopBanner = width >= BANNER_BREAKPOINT;
     banner = useDesktopBanner ? desktopBannerRef.current : mobileBannerRef.current;
-    emptyColCount = calculateEmptyColumns(useDesktopBanner, bannerContainerContentWidth);
+    const emptyColCount = calculateEmptyColumns(useDesktopBanner, bannerContainerContentWidth);
     trailingEmptyColumns =
       emptyColCount > 0
         ? [...Array(emptyColCount)].map((num, index) => <EmptyColumn key={index} />)
