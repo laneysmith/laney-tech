@@ -10,6 +10,7 @@ import ThemePicker from './themePicker';
 import Banner from './banner';
 import Footer from './footer';
 import Button from './button';
+import { useIsMounted } from './utils';
 
 const LayoutContainer = styled.div`
   margin: 0;
@@ -31,8 +32,8 @@ const Layout = ({ location, children }) => {
   const [theme, setTheme] = useState(LIGHT_THEME);
   const rootPath = `${__PATH_PREFIX__}/`; // eslint-disable-line no-undef
   const isRootPath = location.pathname === rootPath;
-
-  const homeButton = (
+  const isMounted = useIsMounted();
+  const homeButton = isMounted && !isRootPath && (
     <nav>
       <Link to="/">
         <Button id="home-button">← Home</Button>
@@ -47,9 +48,9 @@ const Layout = ({ location, children }) => {
         <ThemePicker theme={theme} setTheme={setTheme} />
         <Banner />
         <MainWrapper>
-          {!isRootPath && homeButton}
+          {homeButton}
           {children}
-          {!isRootPath && homeButton}
+          {homeButton}
         </MainWrapper>
         <Footer />
       </LayoutContainer>
