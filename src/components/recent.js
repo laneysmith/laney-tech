@@ -9,7 +9,11 @@ const Recent = () => (
     Lately I've been...
     <List>
       <ListItem icon="🗺">
-        making <a href="https://covid.laney.tech/">data-driven maps</a>,
+        building a data-driven map of <a href="https://covid.laney.tech/">Covid-19 cases</a> in US
+        counties,
+      </ListItem>
+      <ListItem icon="🚴">
+        mapping <a href="https://denver-bikes.laney.tech/">Denver's bike infrastructure</a>,
       </ListItem>
       <ListItem icon="🧪">
         conducting various <a href="https://github.com/laneysmith/">experiments</a>,
