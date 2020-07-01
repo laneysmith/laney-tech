@@ -5,6 +5,7 @@ import { Disqus } from 'gatsby-plugin-disqus';
 import styled from 'styled-components';
 
 import SEO from '../components/layout/seo';
+import Comments from '../components/comments';
 import { rhythm, scale } from '../utils/typography';
 
 const PostTitle = styled.h1`
@@ -35,11 +36,11 @@ const PostTemplate = ({ data, pageContext, location }) => {
   const { id, frontmatter, excerpt, html } = post;
   const { title, date } = frontmatter;
   const { previous, next } = pageContext;
-  const disqusConfig = {
-    url: `${siteUrl + location.pathname}`,
-    identifier: id,
-    title,
-  };
+  // const disqusConfig = {
+  //   url: `${siteUrl + location.pathname}`,
+  //   identifier: id,
+  //   title,
+  // };
 
   return (
     <>
@@ -50,7 +51,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
           <p style={{ ...scale(-1 / 5), display: `block` }}>{date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: html }} />
-        <Disqus config={disqusConfig} />
+        <Comments />
       </ArticleContainer>
       <Divider />
       <nav>
