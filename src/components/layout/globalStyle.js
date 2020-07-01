@@ -86,6 +86,14 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  /* disqus overrides */
+  #disqus_thread {
+    background-color: #efefef;
+    border-radius: 6px;
+    margin: ${rhythm(0.5)} 0 ${rhythm(1)} 0;
+    padding: 13px 13px 0 13px;
+  }
+
   /* prismjs overrides */
   :not(pre) > code[class*="language-"] {
     background: ${({ theme }) => theme.cellColor} !important;
