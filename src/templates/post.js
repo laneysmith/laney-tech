@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
+import { Disqus } from 'gatsby-plugin-disqus';
 import styled from 'styled-components';
 
 import SEO from '../components/layout/seo';
@@ -30,11 +31,17 @@ const BottomNav = styled.ul`
   margin: 0;
 `;
 
-const PostTemplate = ({ data, pageContext }) => {
+const PostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
-  const { frontmatter, excerpt, html } = post;
+  const { siteUrl } = data.site.siteMetadata;
+  const { id, frontmatter, excerpt, html } = post;
   const { title, date } = frontmatter;
   const { previous, next } = pageContext;
+  const disqusConfig = {
+    url: `${siteUrl + location.pathname}`,
+    identifier: id,
+    title,
+  };
 
   return (
     <>
@@ -46,6 +53,7 @@ const PostTemplate = ({ data, pageContext }) => {
           <p style={{ ...scale(-1 / 5), display: `block` }}>{date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: html }} />
+        <Disqus config={disqusConfig} />
       </ArticleContainer>
       <Divider />
       <nav>
@@ -103,9 +111,11 @@ PostTemplate.propTypes = {
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
         title: PropTypes.string.isRequired,
+        siteUrl: PropTypes.string.isRequired,
       }),
     }).isRequired,
     markdownRemark: PropTypes.shape({
+      id: PropTypes.string.isRequired,
       excerpt: PropTypes.string.isRequired,
       html: PropTypes.string.isRequired,
       frontmatter: PropTypes.shape({
@@ -123,6 +133,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
