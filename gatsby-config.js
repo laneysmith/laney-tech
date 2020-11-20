@@ -104,6 +104,12 @@ module.exports = {
         component: require.resolve(`./src/components/layout`),
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `laney-tech`,
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 };
