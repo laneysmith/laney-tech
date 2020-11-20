@@ -5,6 +5,8 @@ import { Disqus } from 'gatsby-plugin-disqus';
 import styled from 'styled-components';
 
 import SEO from '../components/layout/seo';
+import ScrollProgressBar from '../components/layout/scrollProgressBar';
+
 import { rhythm, scale } from '../utils/typography';
 
 const PostTitle = styled.h1`
@@ -44,6 +46,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
   return (
     <>
       <SEO pageTitle={title} description={excerpt} />
+      <ScrollProgressBar />
       <ArticleContainer>
         <header>
           <PostTitle>{title}</PostTitle>
