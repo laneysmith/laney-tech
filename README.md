@@ -5,4 +5,4 @@
 ## Resources
 
 - [Gatsby](https://www.gatsbyjs.org/)
-- [Pixel Perfect svg icons](https://www.flaticon.com/authors/pixel-perfect)
+- [Pixel Pirate Font](https://www.dafont.com/pixel-pirate.font)
