@@ -63,7 +63,7 @@ exports[`About should match snapshot 1`] = `
       <div
         role="listitem"
       >
-        Bellingham, WA
+        Denver, CO
       </div>
     </div>
   </main>

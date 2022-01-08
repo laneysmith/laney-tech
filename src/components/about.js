@@ -8,7 +8,7 @@ const About = () => (
   <Section id="about-section" title="Laney Smith">
     <List>
       <ListItem icon="👩‍💻">web developer</ListItem>
-      <ListItem icon="🏔">Bellingham, WA</ListItem>
+      <ListItem icon="🏔">Denver, CO</ListItem>
     </List>
   </Section>
 );
