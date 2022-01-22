@@ -3,7 +3,7 @@ import { Link, graphql, PageRendererProps } from 'gatsby';
 import { Disqus } from 'gatsby-plugin-disqus';
 import styled from 'styled-components';
 
-import SEO from '../components/Layout/SEO';
+import SEO from '../components/Layout/SEO2';
 import ScrollProgressBar from '../components/Layout/ScrollProgressBar';
 
 import { rhythm, scale } from '../utils/typography';
