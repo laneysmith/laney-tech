@@ -16,4 +16,6 @@ module.exports = {
   clearMocks: true,
   setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
   testEnvironment: 'jsdom',
+  preset: 'ts-jest',
+  modulePathIgnorePatterns: ['.*/build'],
 };

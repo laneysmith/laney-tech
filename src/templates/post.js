@@ -4,8 +4,8 @@ import { Link, graphql } from 'gatsby';
 import { Disqus } from 'gatsby-plugin-disqus';
 import styled from 'styled-components';
 
-import SEO from '../components/layout/seo';
-import ScrollProgressBar from '../components/layout/scrollProgressBar';
+import SEO from '../components/Layout/SEO';
+import ScrollProgressBar from '../components/Layout/ScrollProgressBar';
 
 import { rhythm, scale } from '../utils/typography';
 

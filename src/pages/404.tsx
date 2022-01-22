@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { navigate } from 'gatsby';
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   useEffect(() => {
     navigate('/');
   }, []);

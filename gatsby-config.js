@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 module.exports = {
   siteMetadata: {
     title: `laney.tech`,
@@ -18,8 +20,7 @@ module.exports = {
       },
       {
         title: 'Tutorial: Conditionally Styling Features Based on Data in Mapbox (Dev.to)',
-        link:
-          'https://dev.to/laney/mapbox-how-to-conditionally-style-features-based-on-covid-19-data-h78',
+        link: 'https://dev.to/laney/mapbox-how-to-conditionally-style-features-based-on-covid-19-data-h78',
       },
     ],
   },
@@ -100,7 +101,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/layout`),
+        component: path.resolve(`./src/components/Layout`),
       },
     },
     {
@@ -110,5 +111,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true,
+      },
+    },
   ],
 };
