@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, PageRendererProps } from 'gatsby';
 import { Disqus } from 'gatsby-plugin-disqus';
 import styled from 'styled-components';
 
@@ -31,7 +30,44 @@ const BottomNav = styled.ul`
   margin: 0;
 `;
 
-const PostTemplate = ({ data, pageContext, location }) => {
+interface PostData {
+  site: {
+    siteMetadata: {
+      title: string;
+      siteUrl: string;
+    };
+  };
+  markdownRemark: {
+    id: string;
+    excerpt: string;
+    html: string;
+    frontmatter: {
+      title: string;
+      date: string;
+    };
+  };
+}
+
+interface PageInfo {
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    title: string;
+  };
+}
+
+interface RelativePageInfo {
+  previous: PageInfo;
+  next: PageInfo;
+}
+
+interface PostTemplate extends PageRendererProps {
+  data: PostData;
+  pageContext: RelativePageInfo;
+}
+
+const PostTemplate: React.FC<PostTemplate> = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const { siteUrl } = data.site.siteMetadata;
   const { id, frontmatter, excerpt, html } = post;
@@ -83,47 +119,6 @@ const PostTemplate = ({ data, pageContext, location }) => {
       </nav>
     </>
   );
-};
-
-PostTemplate.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
-  pageContext: PropTypes.shape({
-    previous: PropTypes.shape({
-      fields: PropTypes.shape({
-        slug: PropTypes.string.isRequired,
-      }),
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }),
-    }),
-    next: PropTypes.shape({
-      fields: PropTypes.shape({
-        slug: PropTypes.string.isRequired,
-      }),
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }),
-    }),
-  }).isRequired,
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        siteUrl: PropTypes.string.isRequired,
-      }),
-    }).isRequired,
-    markdownRemark: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      excerpt: PropTypes.string.isRequired,
-      html: PropTypes.string.isRequired,
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-      }),
-    }).isRequired,
-  }).isRequired,
 };
 
 export default PostTemplate;
