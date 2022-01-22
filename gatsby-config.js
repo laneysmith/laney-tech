@@ -111,13 +111,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: true,
-        jsxPragma: `jsx`, // defaults to "React"
-        allExtensions: true,
-      },
-    },
   ],
 };
