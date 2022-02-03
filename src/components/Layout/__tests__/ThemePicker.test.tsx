@@ -1,7 +1,6 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ThemePicker from '../ThemePicker';
-import { THEME_LIST } from '../../constants';
+import { THEME_LIST } from '../themes';
 
 describe('ThemePicker', () => {
   const themeList = THEME_LIST;

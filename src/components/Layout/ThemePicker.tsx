@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Button from './Button';
-
+import { THEME_LIST, Theme } from './themes';
 import { rhythm } from '../../utils/typography';
-import { THEME_LIST, Theme } from '../constants';
 
 const ThemePickerContainer = styled.div`
   text-align: right;

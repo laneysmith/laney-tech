@@ -53,7 +53,7 @@ exports[`About should match snapshot 1`] = `
       <div
         role="listitem"
       >
-        web developer
+        Web developer
       </div>
       <div
         role="img"
@@ -63,7 +63,7 @@ exports[`About should match snapshot 1`] = `
       <div
         role="listitem"
       >
-        Denver, CO
+        Based in Colorado
       </div>
     </div>
   </main>

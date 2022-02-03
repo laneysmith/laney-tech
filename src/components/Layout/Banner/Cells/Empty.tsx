@@ -4,7 +4,7 @@ import { GridCellEmpty } from './SharedStyles';
 
 const CellEmpty: React.FC = () => {
   const [colorNumber, setColorNumber] = useState(0);
-  const handleClickCell = () => {
+  const handleClickCell = (): void => {
     setColorNumber(prevState => {
       if (prevState === 5) {
         return 0;
@@ -12,7 +12,7 @@ const CellEmpty: React.FC = () => {
       return prevState + 1;
     });
   };
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
     if (event.key === 'Enter') {
       handleClickCell();
     }

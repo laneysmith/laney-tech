@@ -26,7 +26,8 @@ const calculateScrollPercentage = (): number => {
 
 const ScrollProgressBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(0);
-  const scrollEvent = () => requestAnimationFrame(() => setScrolled(calculateScrollPercentage()));
+  const scrollEvent = (): number =>
+    requestAnimationFrame(() => setScrolled(calculateScrollPercentage()));
 
   useEffect(() => {
     document.addEventListener('scroll', scrollEvent);

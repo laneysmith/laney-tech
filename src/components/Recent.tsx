@@ -6,19 +6,21 @@ import ListItem from './Section/ListItem';
 
 const Recent: React.FC = () => (
   <Section id="recent-section" title="Recent activity">
-    Lately I've been...
+    Lately I&apos;ve been...
     <List>
       <ListItem icon="🗺">
         building a data-driven map of <a href="https://covid.laney.tech/">Covid-19 cases</a> in US
         counties,
       </ListItem>
       <ListItem icon="🚴">
-        mapping <a href="https://denver-bikes.laney.tech/">Denver's bike infrastructure</a>,
+        mapping <a href="https://denver-bikes.laney.tech/">Denver&apos;s bike infrastructure</a>,
       </ListItem>
       <ListItem icon="🧪">
         conducting various <a href="https://github.com/laneysmith/">experiments</a>,
       </ListItem>
-      <ListItem icon="✨">and building modern websites that make people's lives easier.</ListItem>
+      <ListItem icon="✨">
+        and building modern websites that make people&apos;s lives easier.
+      </ListItem>
     </List>
   </Section>
 );

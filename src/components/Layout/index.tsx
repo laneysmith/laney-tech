@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 
-import { Theme } from '../constants';
+import { Theme, themeOptions } from './themes';
 import { GlobalStyle } from './GlobalStyle';
-import * as ThemeStyles from './themes';
 import ThemePicker from './ThemePicker';
 import Banner from './Banner';
 import Footer from './Footer';
@@ -47,7 +46,7 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
   );
 
   return (
-    <ThemeProvider theme={ThemeStyles[theme]}>
+    <ThemeProvider theme={themeOptions[theme]}>
       <GlobalStyle />
       <LayoutContainer>
         <ThemePicker theme={theme} setTheme={setTheme} />

@@ -18,4 +18,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   preset: 'ts-jest',
   modulePathIgnorePatterns: ['.*/build'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
 };

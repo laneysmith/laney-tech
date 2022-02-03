@@ -1,4 +1,14 @@
-export const light = {
+import { DefaultTheme } from "styled-components";
+
+export enum Theme {
+  LIGHT_THEME = 'light',
+  DARK_THEME = 'dark',
+  RAINBOW_THEME = 'rainbow'
+}
+
+export const THEME_LIST = [Theme.LIGHT_THEME, Theme.DARK_THEME, Theme.RAINBOW_THEME];
+
+const light = {
   backgroundColor: '#FFFFFF',
   textColor: '#24292e',
   secondaryTextColor: '#50555a',
@@ -13,7 +23,7 @@ export const light = {
   accentColor5: '#196127',
 };
 
-export const dark = {
+const dark = {
   backgroundColor: '#1E1E1E',
   textColor: '#D2D2D2',
   secondaryTextColor: '#D2D2D2',
@@ -28,7 +38,7 @@ export const dark = {
   accentColor5: '#4f8cc9',
 };
 
-export const rainbow = {
+const rainbow = {
   backgroundColor: `repeating-linear-gradient(45deg,
     rgba(255, 108, 108, 0.2) 0px, rgba(255, 108, 108, 0.2) 20px,
     rgba(255, 162, 42, 0.2) 20px, rgba(255, 162, 42, 0.2) 40px,
@@ -48,3 +58,9 @@ export const rainbow = {
   accentColor4: 'rgba(94, 195, 220, 1)', // blue
   accentColor5: 'rgba(165, 107, 183, 0.7)', // purple
 };
+
+export const themeOptions: { [key in Theme]: DefaultTheme } = {
+  light,
+  dark,
+  rainbow
+}
