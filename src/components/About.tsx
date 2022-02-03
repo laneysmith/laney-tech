@@ -7,8 +7,8 @@ import ListItem from './Section/ListItem';
 const About: React.FC = () => (
   <Section id="about-section" title="Laney Smith">
     <List>
-      <ListItem icon="👩‍💻">web developer</ListItem>
-      <ListItem icon="🏔">Denver, CO</ListItem>
+      <ListItem icon="👩‍💻">Web developer</ListItem>
+      <ListItem icon="🏔">Based in Colorado</ListItem>
     </List>
   </Section>
 );

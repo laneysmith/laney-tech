@@ -5,7 +5,7 @@ import List from './Section/List';
 import ListItem from './Section/ListItem';
 
 const Recent: React.FC = () => (
-  <Section id="recent-section" title="Recent Activity">
+  <Section id="recent-section" title="Recent activity">
     Lately I've been...
     <List>
       <ListItem icon="🗺">

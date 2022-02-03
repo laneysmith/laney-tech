@@ -7,6 +7,7 @@ import Articles from '../components/Articles';
 import Recent from '../components/Recent';
 import Contact from '../components/Contact';
 import { ExternalPosts, Post } from '../types/siteMetadata';
+import SkillsAndExperience from '../components/SkillsAndExperience';
 
 interface Data {
   site: {
@@ -30,6 +31,7 @@ const BlogIndex: React.FC<PageProps<Data>> = ({ data }) => {
       <About />
       <Recent />
       <Articles posts={posts} externalPosts={externalPosts} />
+      <SkillsAndExperience />
       <Contact />
     </>
   );
