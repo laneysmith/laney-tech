@@ -8,7 +8,6 @@ const GridCell = styled.div<GridCellProps>`
   height: 12px;
   width: 12px;
   outline: none;
-  transition: all 0.25s linear;
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.textColor};

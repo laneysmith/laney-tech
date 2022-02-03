@@ -17,7 +17,7 @@ export const dark = {
   backgroundColor: '#1E1E1E',
   textColor: '#D2D2D2',
   secondaryTextColor: '#D2D2D2',
-  linkColor: 'rgb(79, 140, 201)',
+  linkColor: 'rgb(98, 174, 250)',
   gridBackgroundColor: '#181818',
   cellColor: '#222222',
   borderColor: '#4a4a4a',
@@ -30,11 +30,11 @@ export const dark = {
 
 export const rainbow = {
   backgroundColor: `repeating-linear-gradient(45deg,
-    rgba(255, 108, 108, 0.25) 0px, rgba(255, 108, 108, 0.25) 20px,
-    rgba(255, 162, 42, 0.25) 20px, rgba(255, 162, 42, 0.25) 40px,
-    rgba(123, 201, 111, 0.25) 40px, rgba(123, 201, 111, 0.25) 60px,
-    rgba(94, 195, 220, 0.25) 60px, rgba(94, 195, 220, 0.25) 80px,
-    rgba(193, 127, 214, 0.25) 80px, rgba(193, 127, 214, 0.25) 100px
+    rgba(255, 108, 108, 0.2) 0px, rgba(255, 108, 108, 0.2) 20px,
+    rgba(255, 162, 42, 0.2) 20px, rgba(255, 162, 42, 0.2) 40px,
+    rgba(123, 201, 111, 0.2) 40px, rgba(123, 201, 111, 0.2) 60px,
+    rgba(94, 195, 220, 0.2) 60px, rgba(94, 195, 220, 0.2) 80px,
+    rgba(193, 127, 214, 0.2) 80px, rgba(193, 127, 214, 0.2) 100px
   )`,
   textColor: '#24292e',
   secondaryTextColor: '#24292e',
