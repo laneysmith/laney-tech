@@ -15,4 +15,8 @@ module.exports = {
   setupFiles: [`<rootDir>/loadershim.js`],
   clearMocks: true,
   setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
+  testEnvironment: 'jsdom',
+  preset: 'ts-jest',
+  modulePathIgnorePatterns: ['.*/build'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
 };

@@ -1,39 +1,27 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
 
-import SEO from '../components/layout/seo';
-import About from '../components/about';
-import Articles from '../components/articles';
-import Recent from '../components/recent';
-import Contact from '../components/contact';
+import SEO from '../components/Layout/SEO';
+import About from '../components/About';
+import Articles from '../components/Articles';
+import Recent from '../components/Recent';
+import Contact from '../components/Contact';
+import { ExternalPosts, Post } from '../types/siteMetadata';
+import SkillsAndExperience from '../components/SkillsAndExperience';
 
-type Data = {
+interface Data {
   site: {
     siteMetadata: {
       title: string;
-      externalPosts: {
-        title: string;
-        link: string;
-      }[];
+      externalPosts: ExternalPosts[];
     };
   };
   allMarkdownRemark: {
-    edges: {
-      node: {
-        excerpt: string;
-        frontmatter: {
-          title: string;
-          date: string;
-        };
-        fields: {
-          slug: string;
-        };
-      };
-    }[];
+    edges: Post[];
   };
-};
+}
 
-const BlogIndex = ({ data }: PageProps<Data>) => {
+const BlogIndex: React.FC<PageProps<Data>> = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
   const { externalPosts } = data.site.siteMetadata;
 
@@ -43,6 +31,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
       <About />
       <Recent />
       <Articles posts={posts} externalPosts={externalPosts} />
+      <SkillsAndExperience />
       <Contact />
     </>
   );
