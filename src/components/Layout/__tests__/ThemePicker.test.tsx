@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import ThemePicker from '../ThemePicker';
 import { THEME_LIST } from '../themes';
 
@@ -12,25 +13,19 @@ describe('ThemePicker', () => {
     setTheme,
   };
 
-  it('should match snapshot', () => {
-    const { container } = render(<ThemePicker {...PROPS} />);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   it('should call setTheme with the correct values', () => {
     const { rerender } = render(<ThemePicker {...PROPS} />);
     const firstThemeButton = screen.getByRole('button', { name: /light/i });
     const secondThemeButton = screen.getByRole('button', { name: /dark/i });
 
-    fireEvent.click(secondThemeButton);
+    userEvent.click(secondThemeButton);
 
     expect(setTheme).toHaveBeenCalledWith(THEME_LIST[1]);
     expect(setTheme.mock.calls.length).toBe(1);
 
     rerender(<ThemePicker {...PROPS} theme={THEME_LIST[1]} />);
 
-    fireEvent.click(firstThemeButton);
+    userEvent.click(firstThemeButton);
 
     expect(setTheme).toHaveBeenCalledWith(THEME_LIST[0]);
     expect(setTheme.mock.calls.length).toBe(2);
