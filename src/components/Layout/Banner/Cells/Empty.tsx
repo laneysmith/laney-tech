@@ -24,7 +24,7 @@ const CellEmpty: React.FC = () => {
       onClick={handleClickCell}
       onMouseOver={handleClickCell}
       onKeyDown={handleKeyDown}
-      tabIndex={0}
+      tabIndex={-1}
     />
   );
 };

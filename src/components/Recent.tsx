@@ -8,10 +8,11 @@ const Recent: React.FC = () => (
   <Section id="recent-section" title="Recent activity">
     Lately I&apos;ve been...
     <List>
-      <ListItem icon="🗺">
+      {/* TODO: fix covid map */}
+      {/* <ListItem icon="🗺">
         building a data-driven map of <a href="https://covid.laney.tech/">Covid-19 cases</a> in US
         counties,
-      </ListItem>
+      </ListItem> */}
       <ListItem icon="🚴">
         mapping <a href="https://denver-bikes.laney.tech/">Denver&apos;s bike infrastructure</a>,
       </ListItem>
