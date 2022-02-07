@@ -47,6 +47,7 @@ const BannerGrid = styled.div<{ $isHidden: boolean }>`
   grid-row-gap: ${CELL_GAP}px;
   grid-auto-flow: column;
   opacity: ${({ $isHidden }) => ($isHidden ? 0 : 1)};
+  transition: opacity 0.25s linear;
 `;
 
 const Banner: React.FC = () => {

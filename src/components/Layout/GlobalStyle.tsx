@@ -78,11 +78,16 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.linkColor};
     font-weight: 500;
     text-decoration: none;
+    border-radius: 1px;
   }
 
   a:hover {
     color: ${({ theme }) => theme.linkColor};
     text-decoration: underline;
+  }
+
+  button:focus, a:focus, button:active, a:active {
+    outline: ${({ theme }) => `2px dotted ${theme.textColor}`};
   }
 
    @media only screen and (max-width: 600px) {

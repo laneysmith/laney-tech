@@ -28,9 +28,7 @@ const Articles: React.FC<ArticlesProps> = ({ posts = [], externalPosts = [] }) =
           const title = node.frontmatter.title || node.fields.slug;
           return (
             <ListItem key={node.fields.slug} icon={getIconByIndex(index)}>
-              <Link style={{ display: `block` }} to={node.fields.slug}>
-                {title}
-              </Link>
+              <Link to={node.fields.slug}>{title}</Link>
             </ListItem>
           );
         })}
@@ -40,7 +38,7 @@ const Articles: React.FC<ArticlesProps> = ({ posts = [], externalPosts = [] }) =
           const iconIndex = index + posts.length;
           return (
             <ListItem key={`external-post-${index}`} icon={getIconByIndex(iconIndex)}>
-              <a href={link} style={{ display: `block` }}>
+              <a href={link}>
                 {title} <ExternalLinkIcon />
               </a>
             </ListItem>

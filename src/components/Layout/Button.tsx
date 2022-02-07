@@ -19,19 +19,16 @@ const Button = styled.button`
   &:disabled {
     color: ${({ theme }) => theme.textColor};
     opacity: 0.8;
+    cursor: not-allowed;
   }
 
   &:disabled:hover {
     text-decoration: none;
   }
-
-  &:focus {
-    outline: none;
-  }
 `;
 
 const StyledButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = props => {
-  return <Button {...props} />;
+  return <Button tabIndex={0} {...props} />;
 };
 
 export default StyledButton;

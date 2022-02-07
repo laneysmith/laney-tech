@@ -6,6 +6,7 @@ import { rhythm } from '../../utils/typography';
 const FooterContainer = styled.footer.attrs({ role: 'contentinfo' })`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   font-size: 0.8em;
   color: ${({ theme }) => theme.secondaryTextColor};
   border-top: 1px solid ${({ theme }) => theme.borderColor};
