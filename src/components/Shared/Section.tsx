@@ -12,19 +12,18 @@ const SectionContainer = styled.section`
   }
 `;
 
-const SectionDetail = styled.main`
+const SectionDetail = styled.div`
   padding: ${rhythm(0.5)} 0 ${rhythm(0.5)} ${rhythm(0.5)};
   margin-left: ${rhythm(0.5)};
   border-left: 1px solid ${({ theme }) => theme.borderColor};
 `;
 
 interface SectionProps {
-  id: string;
   title: string;
 }
 
-const Section: React.FC<SectionProps> = ({ id, title, children }) => (
-  <SectionContainer id={id}>
+const Section: React.FC<SectionProps> = ({ title, children }) => (
+  <SectionContainer>
     <h3>{title}</h3>
     <SectionDetail>{children}</SectionDetail>
   </SectionContainer>

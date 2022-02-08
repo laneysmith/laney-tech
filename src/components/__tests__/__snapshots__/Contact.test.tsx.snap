@@ -13,16 +13,24 @@ exports[`Contact should match snapshot 1`] = `
 }
 
 .c2 {
-  margin: 0.5em 0 0.5em 0.5em;
-  display: grid;
-  grid-template-columns: 24px 1fr;
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  grid-auto-flow: row;
+  list-style: none;
+  padding: 0;
+  margin: 0.40625rem 0 0.40625rem 0.40625rem;
 }
 
-.c2 > [role='img'] {
-  font-size: 1.2em;
+.c3::before {
+  content: '💾';
+  padding-right: 0.4875rem;
+}
+
+.c4::before {
+  content: '👔';
+  padding-right: 0.4875rem;
+}
+
+.c5::before {
+  content: '📨';
+  padding-right: 0.4875rem;
 }
 
 @media only screen and (max-width:600px) {
@@ -33,25 +41,18 @@ exports[`Contact should match snapshot 1`] = `
 
 <section
   class="c0"
-  id="contact-section"
 >
   <h3>
     Contact Me
   </h3>
-  <main
+  <div
     class="c1"
   >
-    <div
+    <ul
       class="c2"
-      role="list"
     >
-      <div
-        role="img"
-      >
-        💾
-      </div>
-      <div
-        role="listitem"
+      <li
+        class="c3"
       >
         <a
           href="https://github.com/my-github-username"
@@ -59,14 +60,9 @@ exports[`Contact should match snapshot 1`] = `
           github.com/
           my-github-username
         </a>
-      </div>
-      <div
-        role="img"
-      >
-        👔
-      </div>
-      <div
-        role="listitem"
+      </li>
+      <li
+        class="c4"
       >
         <a
           href="https://linkedin.com/in/my-linkedin-username"
@@ -74,22 +70,17 @@ exports[`Contact should match snapshot 1`] = `
           linkedin.com/in/
           my-linkedin-username
         </a>
-      </div>
-      <div
-        role="img"
-      >
-        📨
-      </div>
-      <div
-        role="listitem"
+      </li>
+      <li
+        class="c5"
       >
         <a
           href="mailto:me@theinternet.com"
         >
           me@theinternet.com
         </a>
-      </div>
-    </div>
-  </main>
+      </li>
+    </ul>
+  </div>
 </section>
 `;

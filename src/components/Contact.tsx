@@ -1,9 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Section from './Section';
-import List from './Section/List';
-import ListItem from './Section/ListItem';
+import Section from './Shared/Section';
+import { List, ListItem } from './Shared/List';
 import { SiteMetadata } from '../types/siteMetadata';
 
 interface ContactProps {
@@ -23,15 +22,15 @@ export const PureContact: React.FC<ContactProps> = ({ data }) => {
   const MAIL_TO = `mailto:${email}`;
 
   return (
-    <Section id="contact-section" title="Contact Me">
+    <Section title="Contact Me">
       <List>
-        <ListItem icon="💾">
+        <ListItem $icon="💾">
           <a href={GITHUB_URL}>github.com/{github}</a>
         </ListItem>
-        <ListItem icon="👔">
+        <ListItem $icon="👔">
           <a href={LINKEDIN_URL}>linkedin.com/in/{linkedin}</a>
         </ListItem>
-        <ListItem icon="📨">
+        <ListItem $icon="📨">
           <a href={MAIL_TO}>{email}</a>
         </ListItem>
       </List>
