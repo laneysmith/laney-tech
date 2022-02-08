@@ -29,13 +29,12 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: all 0.25s linear;
+    transition: 0.25s linear;
+    -o-transition: 0.25s linear;
+    -webkit-transition: 0.25s linear;
+    -moz-transition: 0.25s linear;
+    -ms-transition: 0.25s linear;
     transition-property: background, color, background-color;
-    /* -o-transition: background-color 1s;
-      -webkit-transition: background-color 1s;
-      -moz-transition: background-color 1s;
-      -ms-transition: background-color 1s;
-      transition: background-color 1s;    */
   }
 
   #root {

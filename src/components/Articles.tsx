@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Section from './Section';
-import List from './Section/List';
-import ListItem from './Section/ListItem';
+import Section from './Shared/Section';
+import { List, ListItem } from './Shared/List';
 import ExternalLinkIcon from '../icons/external-link.svg';
 import { ExternalPosts, Post } from '../types/siteMetadata';
 
@@ -21,13 +20,13 @@ const Articles: React.FC<ArticlesProps> = ({ posts = [], externalPosts = [] }) =
   }
 
   return (
-    <Section id="articles-section" title="Articles">
+    <Section title="Articles">
       <List>
         {posts.map((post, index) => {
           const { node } = post;
           const title = node.frontmatter.title || node.fields.slug;
           return (
-            <ListItem key={node.fields.slug} icon={getIconByIndex(index)}>
+            <ListItem key={node.fields.slug} $icon={getIconByIndex(index)}>
               <Link to={node.fields.slug}>{title}</Link>
             </ListItem>
           );
@@ -37,7 +36,7 @@ const Articles: React.FC<ArticlesProps> = ({ posts = [], externalPosts = [] }) =
           // pick up where posts left off for icon index
           const iconIndex = index + posts.length;
           return (
-            <ListItem key={`external-post-${index}`} icon={getIconByIndex(iconIndex)}>
+            <ListItem key={`external-post-${index}`} $icon={getIconByIndex(iconIndex)}>
               <a href={link}>
                 {title} <ExternalLinkIcon />
               </a>

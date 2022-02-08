@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Section from './Section';
-import List from './Section/List';
-import ListItem from './Section/ListItem';
+import Section from './Shared/Section';
+import { List, ListItem } from './Shared/List';
 
 const About: React.FC = () => (
-  <Section id="about-section" title="Laney Smith">
+  <Section title="Laney Smith">
     <List>
-      <ListItem icon="👩‍💻">Web developer</ListItem>
-      <ListItem icon="🏔">Based in Colorado</ListItem>
+      <ListItem $icon="👩‍💻">Web developer</ListItem>
+      <ListItem $icon="🏔">Based in Colorado</ListItem>
     </List>
   </Section>
 );
