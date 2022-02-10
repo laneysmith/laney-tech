@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from './Button';
 import { THEME_LIST, Theme } from './themes';
 import { rhythm } from '../../utils/typography';
+import Button, { StyledButton } from '../Shared/Button';
 
 const ThemePickerContainer = styled.div`
   text-align: right;
@@ -12,6 +12,10 @@ const ThemePickerContainer = styled.div`
   @media only screen and (max-width: 600px) {
     padding-right: ${rhythm(0.5)};
   }
+
+  ${StyledButton} {
+    margin-left: ${rhythm(0.5)};
+  }
 `;
 
 interface ThemePickersProps {
@@ -19,24 +23,20 @@ interface ThemePickersProps {
   setTheme: (theme: Theme) => void;
 }
 
-const ThemePicker: React.FC<ThemePickersProps> = ({ theme, setTheme }) => (
-  <ThemePickerContainer>
-    <b>Theme:</b>
-    {THEME_LIST.map(color => {
-      const isSelected = theme === color;
-      return (
-        <Button
-          id={`${color}-theme-btn`}
-          key={`${color}-theme`}
-          onClick={() => setTheme(color)}
-          disabled={isSelected}
-          style={{ marginLeft: `${rhythm(0.5)}` }}
-        >
-          {color}
-        </Button>
-      );
-    })}
-  </ThemePickerContainer>
-);
+const ThemePicker: React.FC<ThemePickersProps> = ({ theme, setTheme }) => {
+  return (
+    <ThemePickerContainer>
+      <strong>Theme:</strong>
+      {THEME_LIST.map(color => {
+        const isSelected = theme === color;
+        return (
+          <Button key={color} onClick={() => setTheme(color)} aria-pressed={isSelected}>
+            {color}
+          </Button>
+        );
+      })}
+    </ThemePickerContainer>
+  );
+};
 
 export default ThemePicker;

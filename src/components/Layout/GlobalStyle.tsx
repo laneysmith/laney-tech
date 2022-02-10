@@ -29,11 +29,11 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: 0.25s linear;
-    -o-transition: 0.25s linear;
-    -webkit-transition: 0.25s linear;
-    -moz-transition: 0.25s linear;
-    -ms-transition: 0.25s linear;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -ms-transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition-property: background, color, background-color;
   }
 
@@ -85,7 +85,10 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: underline;
   }
 
-  button:focus, a:focus, button:active, a:active {
+  a:focus,
+  a:active,
+  button:focus,
+  button:active {
     outline: ${({ theme }) => `2px dotted ${theme.textColor}`};
   }
 

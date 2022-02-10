@@ -37,14 +37,14 @@ describe('ThemePicker', () => {
     const secondThemeButton = screen.getByRole('button', { name: /dark/i });
     const thirdThemeButton = screen.getByRole('button', { name: /rainbow/i });
 
-    expect(firstThemeButton).toBeDisabled();
-    expect(secondThemeButton).not.toBeDisabled();
-    expect(thirdThemeButton).not.toBeDisabled();
+    expect(firstThemeButton).toHaveAttribute('aria-pressed', 'true');
+    expect(secondThemeButton).toHaveAttribute('aria-pressed', 'false');
+    expect(thirdThemeButton).toHaveAttribute('aria-pressed', 'false');
 
     rerender(<ThemePicker {...PROPS} theme={THEME_LIST[1]} />);
 
-    expect(firstThemeButton).not.toBeDisabled();
-    expect(secondThemeButton).toBeDisabled();
-    expect(thirdThemeButton).not.toBeDisabled();
+    expect(firstThemeButton).toHaveAttribute('aria-pressed', 'false');
+    expect(secondThemeButton).toHaveAttribute('aria-pressed', 'true');
+    expect(thirdThemeButton).toHaveAttribute('aria-pressed', 'false');
   });
 });
