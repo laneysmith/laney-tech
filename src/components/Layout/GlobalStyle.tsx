@@ -63,10 +63,6 @@ export const GlobalStyle = createGlobalStyle`
     border-left-color: ${({ theme }) => theme.borderColor};
   }
 
-  strong {
-    font-weight: 800;
-  }
-
   .svg-icon {
     fill: currentColor;
     height: 12px;

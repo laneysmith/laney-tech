@@ -26,6 +26,7 @@ const buttonStyles = (): FlattenInterpolation<ThemeProps<DefaultTheme>> => {
       opacity: 0.8;
     }
 
+    &[aria-pressed='true']:hover,
     &:disabled:hover {
       text-decoration: none;
     }

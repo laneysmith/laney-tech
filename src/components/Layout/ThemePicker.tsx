@@ -26,7 +26,7 @@ interface ThemePickersProps {
 const ThemePicker: React.FC<ThemePickersProps> = ({ theme, setTheme }) => {
   return (
     <ThemePickerContainer>
-      <strong>Theme:</strong>
+      <b>Theme:</b>
       {THEME_LIST.map(color => {
         const isSelected = theme === color;
         return (
