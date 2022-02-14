@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { rhythm } from '../../utils/typography';
+import { focusOutline } from '../Shared/styleUtils';
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -85,7 +86,7 @@ export const GlobalStyle = createGlobalStyle`
   a:active,
   button:focus,
   button:active {
-    outline: ${({ theme }) => `2px dotted ${theme.textColor}`};
+    ${focusOutline()}
   }
 
    @media only screen and (max-width: 600px) {

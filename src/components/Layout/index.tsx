@@ -7,7 +7,7 @@ import ThemePicker from './ThemePicker';
 import Banner from './Banner';
 import Footer from './Footer';
 import { useIsMounted } from './utils';
-import { LinkButton } from '../Shared/Button';
+import ButtonLink from '../Shared/ButtonLink';
 
 const LayoutContainer = styled.div`
   margin: 0;
@@ -38,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
   const isMounted = useIsMounted();
   const homeButton = isMounted && !isRootPath && (
     <nav>
-      <LinkButton to="/">← Home</LinkButton>
+      <ButtonLink to="/">← Home</ButtonLink>
     </nav>
   );
 
