@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 
 import { Theme, themeOptions } from './themes';
@@ -7,8 +6,8 @@ import { GlobalStyle } from './GlobalStyle';
 import ThemePicker from './ThemePicker';
 import Banner from './Banner';
 import Footer from './Footer';
-import Button from './Button';
 import { useIsMounted } from './utils';
+import ButtonLink from '../Shared/ButtonLink';
 
 const LayoutContainer = styled.div`
   margin: 0;
@@ -39,9 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
   const isMounted = useIsMounted();
   const homeButton = isMounted && !isRootPath && (
     <nav>
-      <Link to="/">
-        <Button id="home-button">← Home</Button>
-      </Link>
+      <ButtonLink to="/">← Home</ButtonLink>
     </nav>
   );
 

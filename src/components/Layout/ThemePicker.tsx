@@ -1,12 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from './Button';
 import { THEME_LIST, Theme } from './themes';
 import { rhythm } from '../../utils/typography';
+import RadioButton from '../Shared/Radio';
 
-const ThemePickerContainer = styled.div`
+const ThemePickerFieldset = styled.fieldset`
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
   text-align: right;
+  margin: 0;
   width: 100%;
 
   @media only screen and (max-width: 600px) {
@@ -14,29 +20,37 @@ const ThemePickerContainer = styled.div`
   }
 `;
 
+const RadioGroup = styled.div.attrs({ role: 'radiogroup' })``;
+
 interface ThemePickersProps {
   theme: Theme;
   setTheme: (theme: Theme) => void;
 }
 
-const ThemePicker: React.FC<ThemePickersProps> = ({ theme, setTheme }) => (
-  <ThemePickerContainer>
-    <b>Theme:</b>
-    {THEME_LIST.map(color => {
-      const isSelected = theme === color;
-      return (
-        <Button
-          id={`${color}-theme-btn`}
-          key={`${color}-theme`}
-          onClick={() => setTheme(color)}
-          disabled={isSelected}
-          style={{ marginLeft: `${rhythm(0.5)}` }}
-        >
-          {color}
-        </Button>
-      );
-    })}
-  </ThemePickerContainer>
-);
+const ThemePicker: React.FC<ThemePickersProps> = ({ theme, setTheme }) => {
+  return (
+    <ThemePickerFieldset>
+      <b id="radio-group-label">Theme:</b>
+      <RadioGroup aria-labelledby="radio-group-label">
+        {THEME_LIST.map(color => {
+          const isSelected = theme === color;
+          return (
+            <RadioButton
+              key={color}
+              id={`${color}-radio`}
+              name="theme"
+              value={color}
+              onChange={() => setTheme(color)}
+              checked={isSelected}
+              aria-checked={isSelected}
+            >
+              {color}
+            </RadioButton>
+          );
+        })}
+      </RadioGroup>
+    </ThemePickerFieldset>
+  );
+};
 
 export default ThemePicker;
