@@ -22,7 +22,7 @@ export const PureContact: React.FC<ContactProps> = ({ data }) => {
   const MAIL_TO = `mailto:${email}`;
 
   return (
-    <Section title="Contact Me">
+    <Section title="Contact me">
       <List>
         <ListItem $icon="💾">
           <a href={GITHUB_URL}>github.com/{github}</a>
