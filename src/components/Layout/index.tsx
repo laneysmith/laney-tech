@@ -46,8 +46,10 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
     <ThemeProvider theme={themeOptions[theme]}>
       <GlobalStyle />
       <LayoutContainer>
-        <ThemePicker theme={theme} setTheme={setTheme} />
-        <Banner />
+        <header>
+          <ThemePicker theme={theme} setTheme={setTheme} />
+          <Banner />
+        </header>
         <MainWrapper>
           {homeButton}
           {children}

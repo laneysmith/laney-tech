@@ -39,6 +39,18 @@ const BannerContainer = styled.div`
   }
 `;
 
+const AccessibleHiddenHeading = styled.h1`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+`;
+
 const BannerGrid = styled.div<{ $isHidden: boolean }>`
   display: grid;
   grid-template-columns: repeat(auto-fit, ${CELL_SIZE}px);
@@ -72,6 +84,7 @@ const Banner: React.FC = () => {
 
   return (
     <BannerContainer>
+      <AccessibleHiddenHeading>laney.tech</AccessibleHiddenHeading>
       <BannerGrid $isHidden={!isMounted}>
         {banner}
         {trailingEmptyColumns}
