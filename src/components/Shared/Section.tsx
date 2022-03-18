@@ -24,7 +24,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ title, children }) => (
   <SectionContainer>
-    <h3>{title}</h3>
+    <h2>{title}</h2>
     <SectionDetail>{children}</SectionDetail>
   </SectionContainer>
 );

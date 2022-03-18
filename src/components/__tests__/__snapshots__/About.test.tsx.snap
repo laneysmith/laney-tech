@@ -37,9 +37,9 @@ exports[`About should match snapshot 1`] = `
 <section
   class="c0"
 >
-  <h3>
+  <h2>
     Laney Smith
-  </h3>
+  </h2>
   <div
     class="c1"
   >

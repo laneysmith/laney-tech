@@ -51,6 +51,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2, h3 {
+    font-size: 1.3rem;
     border-bottom: none;
     margin: ${rhythm(0.5)} 0; 
   }
