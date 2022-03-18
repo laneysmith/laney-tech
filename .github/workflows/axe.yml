@@ -1,0 +1,22 @@
+name: Axe
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  axe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - run: yarn start & npx wait-on http://localhost:8000
+      - name: Run axe
+        run: |
+          npm install -g @axe-core/cli
+          axe http://localhost:8000 --exit
