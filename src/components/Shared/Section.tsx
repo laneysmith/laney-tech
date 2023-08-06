@@ -20,6 +20,7 @@ const SectionDetail = styled.div`
 
 interface SectionProps {
   title: string;
+  children: React.ReactNode;
 }
 
 const Section: React.FC<SectionProps> = ({ title, children }) => (
