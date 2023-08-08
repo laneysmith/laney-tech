@@ -10,8 +10,12 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li<{ $icon: React.ReactNode }>`
+  position: relative;
+  margin-left: ${rhythm(1)};
+
   &::before {
     content: ${props => `'${props.$icon}'`};
-    padding-right: ${rhythm(0.3)};
+    position: absolute;
+    left: -${rhythm(1)};
   }
 `;
