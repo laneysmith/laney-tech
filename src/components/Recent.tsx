@@ -12,6 +12,9 @@ const Recent: React.FC = () => (
         building a data-driven map of <a href="https://covid.laney.tech/">Covid-19 cases</a> in US
         counties,
       </ListItem> */}
+      <ListItem $icon="🎨">
+        making a colorful <a href="https://gingham.laney.tech/">CSS pattern generator</a>,
+      </ListItem>
       <ListItem $icon="🚴">
         mapping <a href="https://denver-bikes.laney.tech/">Denver&apos;s bike infrastructure</a>,
       </ListItem>

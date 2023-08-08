@@ -4,16 +4,17 @@ import ThemePicker from '../ThemePicker';
 import { THEME_LIST } from '../themes';
 
 describe('ThemePicker', () => {
-  it('should call setTheme with the correct values', () => {
+  it('should call setTheme with the correct values', async () => {
+    const user = userEvent.setup();
     const setThemeMock = jest.fn();
     render(<ThemePicker theme={THEME_LIST[0]} setTheme={setThemeMock} />);
 
-    userEvent.click(screen.getByLabelText('dark'));
+    await user.click(screen.getByLabelText('dark'));
 
     expect(setThemeMock).toHaveBeenCalledWith('dark');
     expect(setThemeMock.mock.calls.length).toBe(1);
 
-    userEvent.click(screen.getByLabelText('rainbow'));
+    await user.click(screen.getByLabelText('rainbow'));
 
     expect(setThemeMock).toHaveBeenCalledWith('rainbow');
     expect(setThemeMock.mock.calls.length).toBe(2);
