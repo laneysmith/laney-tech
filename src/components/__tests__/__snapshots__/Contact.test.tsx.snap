@@ -18,19 +18,37 @@ exports[`Contact should match snapshot 1`] = `
   margin: 0.40625rem 0 0.40625rem 0.40625rem;
 }
 
+.c3 {
+  position: relative;
+  margin-left: 1.625rem;
+}
+
 .c3::before {
   content: '💾';
-  padding-right: 0.4875rem;
+  position: absolute;
+  left: -1.625rem;
+}
+
+.c4 {
+  position: relative;
+  margin-left: 1.625rem;
 }
 
 .c4::before {
   content: '👔';
-  padding-right: 0.4875rem;
+  position: absolute;
+  left: -1.625rem;
+}
+
+.c5 {
+  position: relative;
+  margin-left: 1.625rem;
 }
 
 .c5::before {
   content: '📨';
-  padding-right: 0.4875rem;
+  position: absolute;
+  left: -1.625rem;
 }
 
 @media only screen and (max-width:600px) {
