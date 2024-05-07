@@ -14,7 +14,7 @@ module.exports = {
   testEnvironmentOptions: { url: `http://localhost` },
   setupFiles: [`<rootDir>/loadershim.js`],
   clearMocks: true,
-  setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
+  setupFilesAfterEnv: ['<rootDir>/setup-test-env.ts'],
   testEnvironment: 'jsdom',
   preset: 'ts-jest',
   modulePathIgnorePatterns: ['.*/build'],

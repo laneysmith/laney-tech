@@ -15,7 +15,8 @@
     "jsx": "react-jsx",
     "incremental": true,
     "noFallthroughCasesInSwitch": true,
+    "types": ["@testing-library/jest-dom"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "./setup-test-env.ts"],
   "exclude": ["node_modules"]
 }
