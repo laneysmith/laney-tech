@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 
-import { GridCellEmpty } from './SharedStyles';
+import { GridCellEmpty, type ColorNumber, getNextNumber } from './SharedStyles';
 
 const CellEmpty: React.FC = () => {
-  const [colorNumber, setColorNumber] = useState(0);
+  const [colorNumber, setColorNumber] = useState<ColorNumber>(0);
   const handleClickCell = (): void => {
-    setColorNumber(prevState => {
-      if (prevState === 5) {
-        return 0;
-      }
-      return prevState + 1;
-    });
+    setColorNumber(prevState => getNextNumber(prevState + 1));
   };
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
     if (event.key === 'Enter') {

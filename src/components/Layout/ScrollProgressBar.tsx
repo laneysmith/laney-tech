@@ -32,7 +32,7 @@ const ScrollProgressBar: React.FC = () => {
   useEffect(() => {
     document.addEventListener('scroll', scrollEvent);
     return () => document.removeEventListener('scroll', scrollEvent);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <ProgressContainer>

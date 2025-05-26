@@ -1,4 +1,9 @@
-import { FANCY_BANNER_COLS, MOBILE_BANNER_COLS, GRID_CELL_SIZE, GRID_GAP } from '../../constants';
+import {
+  FANCY_BANNER_COLS,
+  MOBILE_BANNER_COLS,
+  GRID_CELL_SIZE,
+  GRID_GAP,
+} from '../../constants/banner';
 
 const calculateEmptyColumns = (useFancyBanner: boolean, parentContainerWidth: number): number => {
   const filledColCount = useFancyBanner ? FANCY_BANNER_COLS : MOBILE_BANNER_COLS;

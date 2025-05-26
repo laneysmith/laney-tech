@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 
+export const colorNumbers = [0, 1, 2, 3, 4, 5] as const;
+export type ColorNumber = (typeof colorNumbers)[number];
+
 interface GridCellProps {
-  colorNumber: number;
+  colorNumber: ColorNumber;
 }
+
+export const getNextNumber = (index: number): ColorNumber =>
+  colorNumbers[index % colorNumbers.length];
 
 const GridCell = styled.div<GridCellProps>`
   height: 12px;
@@ -24,8 +30,7 @@ export const GridCellEmpty = styled(GridCell)`
   cursor: pointer;
 `;
 
-export const GridCellFilled = styled(GridCell)`
-  background: ${({ theme, colorNumber }) => theme[`accentColor${colorNumber}`]};
+export const GridCellFilled = styled(GridCellEmpty)`
   &:focus {
     border: 1px solid ${({ theme }) => theme.textColor};
   }

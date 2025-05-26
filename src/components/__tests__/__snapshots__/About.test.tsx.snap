@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`About should match snapshot 1`] = `
+exports[`About > should match snapshot 1`] = `
 .c0 {
   margin: 0 0 0.8125rem 0;
   padding: 0 0.8125rem;
@@ -50,7 +50,7 @@ exports[`About should match snapshot 1`] = `
   class="c0"
 >
   <h2>
-    Laney Smith
+    Laney Pouzet
   </h2>
   <div
     class="c1"
@@ -61,12 +61,12 @@ exports[`About should match snapshot 1`] = `
       <li
         class="c3"
       >
-        Web developer
+        Software engineer
       </li>
       <li
         class="c4"
       >
-        Based in Colorado
+        Based in Washington
       </li>
     </ul>
   </div>

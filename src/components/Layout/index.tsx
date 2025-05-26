@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, type ReactNode } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
-import { Theme, themeOptions } from './themes';
 import { GlobalStyle } from './GlobalStyle';
 import ThemePicker from './ThemePicker';
 import Banner from './Banner';
 import Footer from './Footer';
-import { useIsMounted } from './utils';
-import ButtonLink from '../Shared/ButtonLink';
+import { themeOptions, type Theme } from './themes';
 
 const LayoutContainer = styled.div`
   margin: 0;
@@ -25,36 +23,19 @@ const MainWrapper = styled.main`
   padding: 0 1em;
 `;
 
-interface LayoutProps {
-  location: {
-    pathname: string;
-  };
-}
-
-const Layout: React.FC<LayoutProps> = ({ location, children }) => {
-  const [theme, setTheme] = useState(Theme.LIGHT_THEME);
-  const rootPath = `${__PATH_PREFIX__}/`; // eslint-disable-line no-undef
-  const isRootPath = location.pathname === rootPath;
-  const isMounted = useIsMounted();
-  const homeButton = isMounted && !isRootPath && (
-    <nav>
-      <ButtonLink to="/">← Home</ButtonLink>
-    </nav>
-  );
+const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [theme, setTheme] = useState<Theme>('light');
+  const themeObj = themeOptions[theme];
 
   return (
-    <ThemeProvider theme={themeOptions[theme]}>
+    <ThemeProvider theme={themeObj}>
       <GlobalStyle />
       <LayoutContainer>
         <header>
-          <ThemePicker theme={theme} setTheme={setTheme} />
+          <ThemePicker theme={themeOptions[theme]} setTheme={setTheme} />
           <Banner />
         </header>
-        <MainWrapper>
-          {homeButton}
-          {children}
-          {homeButton}
-        </MainWrapper>
+        <MainWrapper>{children}</MainWrapper>
         <Footer />
       </LayoutContainer>
     </ThemeProvider>

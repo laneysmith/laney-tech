@@ -1,4 +1,9 @@
-import { css, FlattenInterpolation, ThemeProps, DefaultTheme } from 'styled-components';
+import {
+  css,
+  type FlattenInterpolation,
+  type ThemeProps,
+  type DefaultTheme,
+} from 'styled-components';
 
 export const focusOutline = (): FlattenInterpolation<ThemeProps<DefaultTheme>> => {
   return css`

@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ThemePicker from '../ThemePicker';
@@ -6,7 +7,7 @@ import { THEME_LIST } from '../themes';
 describe('ThemePicker', () => {
   it('should call setTheme with the correct values', async () => {
     const user = userEvent.setup();
-    const setThemeMock = jest.fn();
+    const setThemeMock = vi.fn();
     render(<ThemePicker theme={THEME_LIST[0]} setTheme={setThemeMock} />);
 
     await user.click(screen.getByLabelText('dark'));
@@ -21,13 +22,13 @@ describe('ThemePicker', () => {
   });
 
   it('should have the correct theme selected by default', () => {
-    const { rerender } = render(<ThemePicker theme={THEME_LIST[0]} setTheme={jest.fn()} />);
+    const { rerender } = render(<ThemePicker theme={THEME_LIST[0]} setTheme={vi.fn()} />);
     const firstThemeRadio = screen.getByLabelText('light');
     const secondThemeRadio = screen.getByLabelText('dark');
 
     expect(firstThemeRadio).toBeChecked();
 
-    rerender(<ThemePicker setTheme={jest.fn()} theme={THEME_LIST[1]} />);
+    rerender(<ThemePicker setTheme={vi.fn()} theme={THEME_LIST[1]} />);
 
     expect(secondThemeRadio).toBeChecked();
   });

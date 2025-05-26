@@ -16,10 +16,7 @@ const FooterContainer = styled.footer.attrs({ role: 'contentinfo' })`
 `;
 
 const Footer: React.FC<React.HtmlHTMLAttributes<HTMLElement>> = () => (
-  <FooterContainer>
-    &copy; {new Date().getFullYear()}, Built by Laney Smith with 💜 and&nbsp;
-    <a href="https://www.gatsbyjs.org">Gatsby</a>
-  </FooterContainer>
+  <FooterContainer>&copy; {new Date().getFullYear()}</FooterContainer>
 );
 
 export default Footer;

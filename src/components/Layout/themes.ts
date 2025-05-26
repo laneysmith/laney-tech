@@ -1,12 +1,8 @@
-import { DefaultTheme } from "styled-components";
+import type { DefaultTheme } from 'styled-components';
 
-export enum Theme {
-  LIGHT_THEME = 'light',
-  DARK_THEME = 'dark',
-  RAINBOW_THEME = 'rainbow'
-}
+export type Theme = 'light' | 'dark' | 'rainbow';
 
-export const THEME_LIST = [Theme.LIGHT_THEME, Theme.DARK_THEME, Theme.RAINBOW_THEME];
+export const THEME_LIST: Theme[] = ['light', 'dark', 'rainbow'];
 
 const light = {
   backgroundColor: '#FFFFFF',
@@ -62,5 +58,5 @@ const rainbow = {
 export const themeOptions: { [key in Theme]: DefaultTheme } = {
   light,
   dark,
-  rainbow
-}
+  rainbow,
+};
