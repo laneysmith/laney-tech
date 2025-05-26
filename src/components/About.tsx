@@ -4,10 +4,10 @@ import Section from './Shared/Section';
 import { List, ListItem } from './Shared/List';
 
 const About: React.FC = () => (
-  <Section title="Laney Smith">
+  <Section title="Laney Pouzet">
     <List>
-      <ListItem $icon="👩‍💻">Web developer</ListItem>
-      <ListItem $icon="🏔">Based in Colorado</ListItem>
+      <ListItem $icon="👩‍💻">Software engineer</ListItem>
+      <ListItem $icon="🏔">Based in Washington</ListItem>
     </List>
   </Section>
 );

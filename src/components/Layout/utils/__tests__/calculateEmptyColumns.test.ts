@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import calculateEmptyColumns from '../calculateEmptyColumns';
 
 describe('calculateEmptyColumns', () => {

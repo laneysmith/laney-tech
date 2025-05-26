@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { type DefaultTheme } from 'styled-components';
 
-import { THEME_LIST, Theme } from './themes';
+import { THEME_LIST, type Theme } from './themes';
 import { rhythm } from '../../utils/typography';
 import RadioButton from '../Shared/Radio';
 
@@ -23,7 +23,7 @@ const ThemePickerFieldset = styled.fieldset`
 const RadioGroup = styled.div.attrs({ role: 'radiogroup' })``;
 
 interface ThemePickersProps {
-  theme: Theme;
+  theme: Theme | DefaultTheme;
   setTheme: (theme: Theme) => void;
 }
 
